@@ -6,7 +6,7 @@
 // The variable $number is the number of images you want ot download
 
 function getPictures($theme, $number) {
-    $runScriptCommand = 'phantomjs script3.js '.'"'.$theme.'"';
+    $runScriptCommand = 'phantomjs scriptGetPictureUrl.js '.'"'.$theme.'"';
     // Here we run the phantomJS script (assuming it is correctly installed on the vps) and we store the logs in a variable
     $logScriptPhantom = shell_exec($runScriptCommand);
 
