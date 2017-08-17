@@ -9,7 +9,7 @@ var fs = require('fs');
 var path = 'model/outputs/urls_images.txt';
 
 if (system.args.length === 1) {
-  console.log('Usage: script.js <some subject>');
+  console.log('Usage: script.js <some subject query>');
   phantom.exit();
 }
 page.settings.userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36";

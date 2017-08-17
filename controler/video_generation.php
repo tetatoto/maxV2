@@ -5,12 +5,23 @@ include_once('model/simple_html_dom.php');
 include_once('model/createQuery.php');
 include_once("model/urlExists.php");
 include_once("model/getTextOfArticle.php");
+include_once("model/getPictures.php");
 
 // First we retrieve the POST variables send by the video_view_article page
 // $link = $_POST['link'];
 // $text = $_POST['text'];
 // $title = $_POST['title'];
 $url = $_POST['url'];
+
+// The following variable "theme" is the one which will be send as a query for the image search
+// If there is a title available then it will be the query, else it will only be the url
+$theme = "";
+if (isset($_POST['title'])) {
+    $theme = createQuery($title);
+}
+else {
+    $theme $ $url;
+}
 
 // Check if Url not valid or valid
 $konotko = urlExists($url);
@@ -24,6 +35,9 @@ if ($konotko) {
     // Then we retrieve the text of the article by parsing its webpage
     $articleDom = getPageContent($url);
     $paragraphs = getTextOfArticle($articleDom);
+
+    // We can then search for images :
+    $logDlPics = getPictures($theme, 10);
 
 }
 
