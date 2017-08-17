@@ -17,7 +17,7 @@ for ($i=0; $i < $limit; $i++) {
 
 // Here we create the sound File from the final text
 
-$foo = createSoundFile($finalText);
+$logSound = createSoundFile($finalText);
 
 
 

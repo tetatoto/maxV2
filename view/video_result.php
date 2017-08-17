@@ -59,6 +59,8 @@
                     <source src="model/outputs/soundFile.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio> 
+                <br>
+                <p><?php echo $logSound; ?></p>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
 
