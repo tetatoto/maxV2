@@ -6,7 +6,7 @@ var page = require('webpage').create(),
   system = require('system'),
   t, address;
 var fs = require('fs');
-var path = 'model/outputs/urls_images.txt';
+var path = 'outputs/urls_images.txt';
 
 if (system.args.length === 1) {
   console.log('Usage: script.js <some subject query>');
