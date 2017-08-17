@@ -17,14 +17,14 @@ function runPhantomScript($theme) {
     // the following variable contains the number of images found
     $pictureUrlsSize = count($pictureUrls);
 
-    return $logScriptPhantom;
+    return $pictureUrls;
 }
 
 
 // test the function :
 //$testResult1 = runPhantomScript("james+bond+daniel+craig");
-var_dump( $testResult1);
-echo 'booo';
-echo 'boo';
-echo '2';
+//var_dump( $testResult1);
+//echo 'booo';
+//echo 'boo';
+//echo '3';
 
