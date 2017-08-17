@@ -8,7 +8,7 @@ function getPageContent($url) {
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
     // the next line has to be uncommented if you are working on localhost host e-buro, in order to use cntlm proxy
-	curl_setopt($curl, CURLOPT_PROXY, $proxy);
+	// curl_setopt($curl, CURLOPT_PROXY, $proxy);
     curl_setopt($curl, CURLOPT_HEADER, false);
     curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
     curl_setopt($curl, CURLOPT_URL, $url);
