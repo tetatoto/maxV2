@@ -31,7 +31,7 @@ function getPictures($theme, $number) {
         if ($last4char == ".jpg") {
             $pictureName = 'outputs/image'.$cursor.'.jpg';
             // Then downloading the image using CURL
-            $giving_auth = shell_exec('chmod -R 777 outputs');
+            
             $ch = curl_init($currentUrl);
             $fp = fopen($pictureName, 'wb');
             curl_setopt($ch, CURLOPT_FILE, $fp);
@@ -41,7 +41,7 @@ function getPictures($theme, $number) {
             fclose($fp);
             $cursor++;
         }
-
+        $giving_auth = shell_exec('chmod 777 outputs/*.jpg');
         $current++;
     }
 
