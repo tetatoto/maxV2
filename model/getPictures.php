@@ -45,5 +45,5 @@ function getPictures($pictureUrls, $number) {
 
 
 // test of this function
-$test_func = getPictures("james+bond+daniel+craig", 15);
-echo '<h1>  test '.$test_func.' srx</h1>';
+//$test_func = getPictures("james+bond+daniel+craig", 15);
+//echo '<h1>  test '.$test_func.' srx</h1>';
