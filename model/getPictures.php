@@ -41,4 +41,5 @@ function getPictures($theme, $number) {
         $current++;
     }
 
+
 }
