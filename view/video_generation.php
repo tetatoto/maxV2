@@ -202,7 +202,7 @@
                   <li class="list-group-item">URL <?php echo $url; ?></li>
                   <li class="list-group-item">KO OU PAS <?php echo $konotko; ?></li>
                   <li class="list-group-item">THEME <?php echo $theme; ?></li>
-                  <li class="list-group-item">CURSOR <?php echo $logDlPics; ?></li>
+                  <li class="list-group-item">CURSOR <?php echo $res; ?></li>
                 </ul>
 
 
