@@ -18,6 +18,9 @@ function getPictures($theme, $number) {
     // the following variable contains the number of images found
     $pictureUrlsSize = count($pictureUrls);
 
+    // We clean the repo containing the previous images
+    $cleaningRepo = shell_exec('rm -rf outputs/*.jpg');
+
     // Then we download only the images than are .jpg format
     $cursor = 0;
     $current = 0;
