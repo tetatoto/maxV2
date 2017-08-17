@@ -6,6 +6,7 @@ include_once('model/createQuery.php');
 include_once("model/urlExists.php");
 include_once("model/getTextOfArticle.php");
 include_once("model/getPictures.php");
+include_once("model/runPhantomScript.php");
 
 // First we retrieve the POST variables send by the video_view_article page
 // $link = $_POST['link'];
@@ -37,7 +38,8 @@ if ($konotko) {
     $paragraphs = getTextOfArticle($articleDom);
 
     // We can then search for images :
-    $logDlPics = getPictures($theme, 10);
+    $pictureUrls = runPhantomScript($theme);
+    $res = getPictures($pictureUrls, 25);
 
 }
 
