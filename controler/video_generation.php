@@ -17,7 +17,7 @@ $url = $_POST['url'];
 // If there is a title available then it will be the query, else it will only be the url
 $theme = "";
 if (isset($_POST['title'])) {
-    $theme = createQuery($_POST['title']);
+    $theme = createQuery($_POST['title'], '+');
 }
 else {
     $theme = $url;
