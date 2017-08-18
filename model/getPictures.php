@@ -21,7 +21,7 @@ function getPictures($pictureUrls, $number) {
         $last4char = substr($currentUrl, -4);
 
         if ($last4char == ".jpg") {
-            $pictureName = 'outputs/image'.$cursor.'.jpg';
+            $pictureName = 'model/outputs/image'.$cursor.'.jpg';
             // Then downloading the image using CURL
             
             $ch = curl_init($currentUrl);
@@ -33,7 +33,7 @@ function getPictures($pictureUrls, $number) {
             fclose($fp);
             $cursor++;
         }
-        $giving_auth = shell_exec('chmod 777 outputs/*.jpg');
+        $giving_auth = shell_exec('chmod 777 model/outputs/*.jpg');
         $current++;
     }
 
