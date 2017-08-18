@@ -187,27 +187,29 @@
                 <br><br>
 
                 <div class="row">
-                  <div class="col-sm-6 col-md-4">
+                  
                   <!-- Here we display all the images found -->
                   <?php
                   for ($j=0; $j < $nbPicturesDl; $j++) { 
                     $currentName = 'model/outputs/image'.$j.'.jpg';
                     ?>
-                    <div class="thumbnail">
-                      <img src="<?php echo $currentName; ?>" alt="image">
-                      <div class="caption">
-                        <h3>Thumbnail label</h3>
-                        <p>Blablabla</p>
-                        <label class="custom-control custom-checkbox">
-                          <input type="checkbox" class="custom-control-input" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo $paragraph['text'] ?>">
-                          <span class="custom-control-indicator"></span>
-                        </label>
+                    <div class="col-lg-3">
+                      <div class="thumbnail">
+                        <img src="<?php echo $currentName; ?>" alt="image">
+                        <div class="caption">
+                          <h3>Thumbnail label</h3>
+                          <p>Blablabla</p>
+                          <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo $paragraph['text'] ?>">
+                            <span class="custom-control-indicator"></span>
+                          </label>
+                        </div>
                       </div>
                     </div>
                     <?php
                   }
                   ?>
-                  </div>
+                  
                 </div>
 
                 <h2>IV. Run the generation of the video</h2>
