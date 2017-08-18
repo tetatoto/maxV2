@@ -23,6 +23,8 @@ function runPhantomScript($theme) {
         $pictureUrlsSize = count($pictureUrls);
 
         $wantedSize = $pictureUrlsSize;
+        echo '<p>wanted size = '.$wantedSize.'</p>';
+        echo '<p>nb try = '.$nbTry.'</p>';
         $nbTry++;
     }
 
@@ -42,9 +44,9 @@ function runPhantomScript($theme) {
 
 
 // test the function :
-//$testResult1 = runPhantomScript("james+bond+daniel+craig");
-//var_dump( $testResult1);
-//echo 'booo';
-//echo 'boo';
-//echo '3';
+$testResult1 = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
+var_dump( $testResult1);
+echo 'booo';
+echo 'boo';
+echo '4';
 
