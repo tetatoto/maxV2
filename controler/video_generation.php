@@ -31,6 +31,7 @@ $konotko = urlExists($url);
 $paragraphs = array();
 
 $pictureUrls = array();
+// $pictureUrls_bis = array();
 
 
 // If the Url exists, we can do the work; else we display the page (which will adapt)
@@ -40,8 +41,10 @@ if ($konotko) {
     $paragraphs = getTextOfArticle($articleDom);
 
     // We can then search for images :
-    $pictureUrls = runPhantomScript($theme);
+    $pictureUrls = runPhantomScript(htmlspecialchars($theme));
     // $res = getPictures($pictureUrls, 10);
+
+    $pictureUrls_bis = runPhantomScript($theme);
 
 }
 
