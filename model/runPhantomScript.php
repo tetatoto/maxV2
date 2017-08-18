@@ -41,7 +41,7 @@ function runPhantomScript($theme) {
 
 
 // FOR TESTING the function :
-// $testResult1 = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
-// var_dump( $testResult1);
+// $testResult = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
+// var_dump( $testResult);
 
 
