@@ -186,7 +186,29 @@
 
                 <br><br>
 
-
+                <div class="row">
+                  <div class="col-sm-6 col-md-4">
+                  <!-- Here we display all the images found -->
+                  <?php
+                  for ($j=0; $j < $nbPicturesDl; $j++) { 
+                    $currentName = 'model/outputs/image'.$j.'.jpg';
+                    ?>
+                    <div class="thumbnail">
+                      <img src="<?php echo $currentName; ?>" alt="image">
+                      <div class="caption">
+                        <h3>Thumbnail label</h3>
+                        <p>Blablabla</p>
+                        <label class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo $paragraph['text'] ?>">
+                          <span class="custom-control-indicator"></span>
+                        </label>
+                      </div>
+                    </div>
+                    <?php
+                  }
+                  ?>
+                  </div>
+                </div>
 
                 <h2>IV. Run the generation of the video</h2>
 
@@ -203,7 +225,7 @@
                   <li class="list-group-item">KO OU PAS <?php echo $konotko; ?></li>
                   <li class="list-group-item">THEME <?php echo $theme; ?></li>
                   <li class="list-group-item">PictureUrls <?php var_dump($pictureUrls); ?></li>
-                  <li class="list-group-item">CURSOR  <?php echo $res; ?></li>
+                  <li class="list-group-item">Nb pictures DL  <?php echo $nbPicturesDl; ?></li>
                 </ul>
 
 

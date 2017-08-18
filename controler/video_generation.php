@@ -42,7 +42,8 @@ if ($konotko) {
 
     // We can then search for images : (the second parameter in the call to getPictures is the number of images we want to DL)
     $pictureUrls = runPhantomScript(htmlspecialchars($theme));
-    $res = getPictures($pictureUrls, 20);
+    // The following variable is the number of pictures actually downloaded
+    $nbPicturesDl = getPictures($pictureUrls, 20);
 }
 
 
