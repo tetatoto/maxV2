@@ -17,7 +17,7 @@ function getPictures($pictureUrls, $number) {
     $cursor = 0;
     $current = 0;
     while ($cursor < $number && $current < $pictureUrlsSize) {
-        $currentUrl = $pictureUrls[$current];
+        $currentUrl = $pictureUrls[$pictureUrlsSize-$current];
         $last4char = substr($currentUrl, -4);
 
         if ($last4char == ".jpg") {
