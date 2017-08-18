@@ -37,7 +37,7 @@ function getPictures($pictureUrls, $number) {
         $current++;
     }
 
-    return $pictureUrlsSize;
+    return $cursor;
 
 
 }

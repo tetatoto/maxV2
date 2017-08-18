@@ -40,9 +40,9 @@ if ($konotko) {
     $articleDom = getPageContent($url);
     $paragraphs = getTextOfArticle($articleDom);
 
-    // We can then search for images :
+    // We can then search for images : (the second parameter in the call to getPictures is the number of images we want to DL)
     $pictureUrls = runPhantomScript(htmlspecialchars($theme));
-    $res = getPictures($pictureUrls, 10);
+    $res = getPictures($pictureUrls, 20);
 }
 
 

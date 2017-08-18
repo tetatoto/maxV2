@@ -203,6 +203,7 @@
                   <li class="list-group-item">KO OU PAS <?php echo $konotko; ?></li>
                   <li class="list-group-item">THEME <?php echo $theme; ?></li>
                   <li class="list-group-item">PictureUrls <?php var_dump($pictureUrls); ?></li>
+                  <li class="list-group-item">CURSOR  <?php echo $res; ?></li>
                 </ul>
 
 
