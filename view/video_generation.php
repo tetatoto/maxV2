@@ -202,9 +202,7 @@
                   <li class="list-group-item">URL <?php echo $url; ?></li>
                   <li class="list-group-item">KO OU PAS <?php echo $konotko; ?></li>
                   <li class="list-group-item">THEME <?php echo $theme; ?></li>
-                  <li class="list-group-item">PPictureUrls <?php var_dump($pictureUrls); ?></li>
-                  <li class="list-group-item">PPictureUrls_BIS <?php var_dump($pictureUrls_bis); ?></li>
-                  <li class="list-group-item">DIRECT TEST <?php var_dump(runPhantomScript($theme); ?></li>
+                  <li class="list-group-item">PictureUrls <?php var_dump($pictureUrls); ?></li>
                 </ul>
 
 

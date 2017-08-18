@@ -5,13 +5,12 @@
 // We suppose that the variable $theme is already on the format of a query (james+bond+daniel+craig for example)
 
 function runPhantomScript($theme) {
-    $runScriptCommand = 'phantomjs phantomScript.js '.'"'.$theme.'"';
+    $runScriptCommand = 'phantomjs model/phantomScript.js '.'"'.$theme.'"';
 
     $nbTry = 0;
     $currentSize = 0;
     $wantedSize = 25;
-    $giving_auth1 = shell_exec('chmod 777 *');
-    $giving_auth2 = shell_exec('chmod 777 outputs/*');
+
     $pictureUrls = array();
 
     // I made several tries because sometimes the first script run is always failing
