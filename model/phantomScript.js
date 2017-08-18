@@ -6,7 +6,7 @@ var page = require('webpage').create(),
   system = require('system'),
   t, address;
 var fs = require('fs');
-var path = 'outputs/urls_images.txt';
+// var path = 'outputs/urls_images.txt';
 
 if (system.args.length === 1) {
   console.log('Usage: script.js <some subject query>');
@@ -35,14 +35,14 @@ page.onLoadFinished = function() {
     //console.log(urls[1]);
 
     // Erase the content of the urls_images.txt file
-    fs.remove(path);
+    // fs.remove(path);
     // Wrtting in the text file all the urls found by the script
     console.log(urls[0]);
-    fs.write(path, urls[0], '+');
+    // fs.write(path, urls[0], '+');
     for(k = 1; k < urls.length; k++){
         console.log(urls[k]);
-        fs.write(path, '\n', '+');
-        fs.write(path, urls[k], '+');
+        // fs.write(path, '\n', '+');
+        // fs.write(path, urls[k], '+');
     }
     phantom.exit();
 }
