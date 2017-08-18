@@ -8,11 +8,13 @@ function runPhantomScript($theme) {
     $runScriptCommand = 'phantomjs phantomScript.js '.'"'.$theme.'"';
 
     $nbTry = 0;
+    $currentSize = 0;
     $wantedSize = 25;
-    $giving_auth = shell_exec('chmod 777 outputs/*');
+    $giving_auth1 = shell_exec('chmod 777 *');
+    $giving_auth2 = shell_exec('chmod 777 outputs/*');
     $pictureUrls = array();
 
-    while ($nbTry < 5 && $wantedSize < 25) {
+    while ($nbTry < 5 && $currentSize < $wantedSize) {
         // Here we run the phantomJS script (assuming phantom is correctly installed on the vps) and we store the logs in a variable
         $logScriptPhantom = shell_exec($runScriptCommand);
 
@@ -22,7 +24,7 @@ function runPhantomScript($theme) {
         // the following variable contains the number of images found
         $pictureUrlsSize = count($pictureUrls);
 
-        $wantedSize = $pictureUrlsSize;
+        $currentSize = $pictureUrlsSize;
         echo '<p>wanted size = '.$wantedSize.'</p>';
         echo '<p>nb try = '.$nbTry.'</p>';
         $nbTry++;
