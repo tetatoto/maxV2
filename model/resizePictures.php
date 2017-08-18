@@ -4,7 +4,7 @@
 // It resizes every JPG file in the model/outputs/ directory
 
 function resizePictures($width, $height) {
-    $give_auth = shell_exec("chmod 777 model/outputs/*");
+    // $give_auth = shell_exec("chmod 777 model/outputs/*");
     $commandLine = 'mogrify -resize '.$width.'x'.$height.' model/outputs/*.jpg';
     $runCommand = shell_exec($commandLine);
 
