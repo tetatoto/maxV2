@@ -10,6 +10,7 @@ function runPhantomScript($theme) {
     $nbTry = 0;
     $currentSize = 0;
     $wantedSize = 25;
+    $giving_auth1 = shell_exec("chmod 777 -R *");
 
     $pictureUrls = array();
 

@@ -43,8 +43,6 @@ if ($konotko) {
     // We can then search for images :
     $pictureUrls = runPhantomScript(htmlspecialchars($theme));
     $res = getPictures($pictureUrls, 10);
-
-
 }
 
 
