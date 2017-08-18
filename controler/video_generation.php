@@ -7,6 +7,7 @@ include_once("model/urlExists.php");
 include_once("model/getTextOfArticle.php");
 include_once("model/getPictures.php");
 include_once("model/runPhantomScript.php");
+include_once("model/resizePictures.php");
 
 // First we retrieve the POST variables send by the video_view_article page
 // $link = $_POST['link'];
@@ -42,8 +43,13 @@ if ($konotko) {
 
     // We can then search for images : (the second parameter in the call to getPictures is the number of images we want to DL)
     $pictureUrls = runPhantomScript(htmlspecialchars($theme));
-    // The following variable is the number of pictures actually downloaded
+
+    // DOWNLOADING (The following variable is the number of pictures actually downloaded)
     $nbPicturesDl = getPictures($pictureUrls, 20);
+
+    // RESIZING
+    $resultResizing = resizePictures(320, 210);
+
 }
 
 
