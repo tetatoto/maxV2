@@ -8,6 +8,7 @@ function resizePictures($width, $height) {
     $commandLine = 'mogrify -resize '.$width.'x'.$height.' model/outputs/*.jpg';
     $runCommand = shell_exec($commandLine);
 
+    return $runCommand;
     // Example of command : mogrify -resize 320x210 picture_outputs/*.jpg
 }
 

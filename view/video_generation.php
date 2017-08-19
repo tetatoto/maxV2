@@ -228,6 +228,7 @@
                   <li class="list-group-item">THEME <?php echo $theme; ?></li>
                   <li class="list-group-item">PictureUrls <?php var_dump($pictureUrls); ?></li>
                   <li class="list-group-item">Nb pictures DL  <?php echo $nbPicturesDl; ?></li>
+                  <li class="list-group-item">resultResizing  <?php echo $resultResizing; ?></li>
                 </ul>
 
 
