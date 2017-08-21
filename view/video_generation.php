@@ -17,8 +17,8 @@
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 
-    <!-- Custom style with a fiew things -->
-    <link href="view/max.css" rel="stylesheet">
+    <!-- Custom style with a fiew things (USELESS NOW)-->
+    <!--<link href="view/max.css" rel="stylesheet">-->
 
     <style>
       .check
@@ -242,27 +242,19 @@
 
                 </form>
 
-                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <!--UNCOMMENT THE FOLLOWING LINES FOR TESTING-->
+                <!--<br><br><br><br><br><br><br><br><br><br><br><br>
                 <h1>Getting the post variables</h1>
                 <ul class="list-group">
 
-                  <li class="list-group-item">URL <?php echo $url; ?></li>
-                  <li class="list-group-item">KO OU PAS <?php echo $konotko; ?></li>
-                  <li class="list-group-item">THEME <?php echo $theme; ?></li>
-                  <li class="list-group-item">PictureUrls <?php var_dump($pictureUrls); ?></li>
-                  <li class="list-group-item">Nb pictures DL  <?php echo $nbPicturesDl; ?></li>
-                  <li class="list-group-item">resultResizing  <?php echo $resultResizing; ?></li>
-                </ul>
-
-
-                <h1>Parameters</h1>
-                <ul class="list-group">
-
-                  <li class="list-group-item">Male / Female</li>
-                  <li class="list-group-item">Text</li>
-                  <li class="list-group-item">Subtitles</li>
-                </ul>
-
+                  <li class="list-group-item">URL <?php //echo $url; ?></li>
+                  <li class="list-group-item">KO OU PAS <?php //echo $konotko; ?></li>
+                  <li class="list-group-item">THEME <?php //echo $theme; ?></li>
+                  <li class="list-group-item">PictureUrls <?php //var_dump($pictureUrls); ?></li>
+                  <li class="list-group-item">Nb pictures DL  <?php //echo $nbPicturesDl; ?></li>
+                  <li class="list-group-item">resultResizing  <?php //echo $resultResizing; ?></li>
+                </ul> -->
+                <!--END TESTING-->
 
                 <?php
               }

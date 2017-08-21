@@ -17,6 +17,14 @@
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 
+    <style>
+      .img-thumbnail {
+        height: 210px;
+        width: 320px;
+        border: solid 1px #cccccc;
+      }
+    </style>
+
   </head>
 
   <body>
@@ -61,6 +69,17 @@
                 </audio> 
                 <br>
                 <p><?php echo $logSound; ?></p>
+                <br>
+
+                <?php 
+                foreach ($selectedImages as $imagePath) {
+                  ?>
+                  <div class="col-lg-3">
+                    <img src="<?php echo $imagePath; ?>" alt="image" class="img-thumbnail">
+                  </div>
+                  <?php
+                }
+                ?>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
 
