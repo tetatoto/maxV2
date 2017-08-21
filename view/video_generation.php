@@ -205,7 +205,7 @@
                           <h3>Thumbnail label</h3>
                           <p>Blablabla</p>
                           <label class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo $paragraph['text'] ?>">
+                            <input type="checkbox" class="custom-control-input" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo htmlspecialchars($currentName); ?>">
                             <span class="custom-control-indicator"></span>
                           </label>
                         </div>

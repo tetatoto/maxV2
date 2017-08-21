@@ -13,6 +13,11 @@ function createSoundFile($finalText) {
         'ssml' => 'false',
         'b64' => 'true'
     ]);
-
+    
+    // We clean the repo to erase the previous sound files
+    $supprOldFile = shell_exec("rm -rf model/outputs/soundFile.mp3");
+    // We create the new sound File corresponding to the new text
     file_put_contents('model/outputs/soundFile.mp3', base64_decode($voice['response']));
+    // We put the right of the file to 777
+    $giving_auth = shell_exec("chmod 777 model/outputs/*");
 }
