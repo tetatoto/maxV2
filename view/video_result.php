@@ -82,6 +82,8 @@
                   <?php
                 }
                 ?>
+
+            <p>Nb POST variable Dump = <?php var_dump($_POST); ?></p>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
 
