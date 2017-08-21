@@ -16,7 +16,19 @@ for ($i=0; $i < $limit; $i++) {
 // Now the variable $finalText contains the complete string
 
 // Now we retrieve the images 
+$imageCursor = 0;
+$imageLimit = 30;
 
+// This array will contain the names of the images selected by the user
+$selectedImages = array();
+
+for ($j=0; $j < $imageLimit; $j++) { 
+    $currentImageName = 'model/outputs/image'.$j.'.jpg';
+    if (isset($_POST["$currentImageName"])) {
+        array_push($currentImageName, $selectedImages);
+    }
+    $imageCursor++;
+}
 // Here we create the sound File from the final text
 
 $logSound = createSoundFile($finalText);
