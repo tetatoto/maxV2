@@ -200,7 +200,7 @@
                     ?>
                     <div class="col-lg-3">
                       <div class="thumbnail">
-                        <img src="<?php echo $currentName; ?>" alt="image">
+                        <img src="<?php echo $currentName; ?>" alt="image"  width="320" height="210">
                         <div class="caption">
                           <h3>Thumbnail label</h3>
                           <p>Blablabla</p>
