@@ -33,10 +33,10 @@ function getPictures($pictureUrls, $number) {
             fclose($fp);
             $cursor++;
         }
-        $giving_auth = shell_exec('chmod 777 model/outputs/*.jpg');
+        
         $current++;
     }
-
+    $giving_auth = shell_exec('chmod 777 model/outputs/*.jpg');
     return $cursor;
 
 
