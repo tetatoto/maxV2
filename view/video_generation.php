@@ -28,7 +28,6 @@
       }
 
       .img-thumbnail {
-        border-radius: 100%;
         height: 210px;
         width: 320px;
         border: solid 1px #cccccc;
