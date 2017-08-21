@@ -26,6 +26,13 @@
           opacity:0.5;
           color:#996;
       }
+
+      .img-thumbnail {
+        border-radius: 100%;
+        height: 210px;
+        width: 320px;
+        border: solid 1px #cccccc;
+      }
     </style>
 
   </head>
