@@ -203,11 +203,11 @@
                     ?>
                     <div class="col-lg-3">
                       <div class="thumbnail" >
-                        <img src="<?php echo $currentName; ?>" alt="image" style="height:100px;">
+                        <!--<img src="" alt="image" style="height:100px;">-->
                         <div class="caption">
                           <!--<h3>Thumbnail label</h3>
                           <p>Blablabla</p>-->
-                          <label class="custom-control custom-checkbox">
+                          <label class="btn btn-primary">
                             <img src="<?php echo $currentName; ?>" alt="image" class="img-thumbnail img-check">
                             <input type="checkbox" class="custom-control-input hidden" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo htmlspecialchars($currentName); ?>" autocomplete="off">
                             <!--<span class="custom-control-indicator"></span>-->
