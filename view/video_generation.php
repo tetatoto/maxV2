@@ -202,18 +202,18 @@
                     $currentName = 'model/outputs/image'.$j.'.jpg';
                     ?>
                     <div class="col-lg-3">
-                      <div class="thumbnail" >
+                      <!--<div class="thumbnail" >-->
                         <!--<img src="" alt="image" style="height:100px;">-->
-                        <div class="caption">
+                        <div class="form-group">
                           <!--<h3>Thumbnail label</h3>
                           <p>Blablabla</p>-->
                           <label class="btn btn-primary">
                             <img src="<?php echo $currentName; ?>" alt="image" class="img-thumbnail img-check">
-                            <input type="checkbox" class="custom-control-input hidden" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo htmlspecialchars($currentName); ?>" autocomplete="off">
+                            <input type="checkbox" class="hidden" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo htmlspecialchars($currentName); ?>" autocomplete="off">
                             <!--<span class="custom-control-indicator"></span>-->
                           </label>
                         </div>
-                      </div>
+                      <!--</div>-->
                     </div>
                     <?php
                   }
