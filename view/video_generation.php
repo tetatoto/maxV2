@@ -199,8 +199,8 @@
                     $currentName = 'model/outputs/image'.$j.'.jpg';
                     ?>
                     <div class="col-lg-3">
-                      <div class="thumbnail">
-                        <img src="<?php echo $currentName; ?>" alt="image"  width="320" height="210">
+                      <div class="thumbnail" height="400">
+                        <img src="<?php echo $currentName; ?>" alt="image">
                         <div class="caption">
                           <h3>Thumbnail label</h3>
                           <p>Blablabla</p>
