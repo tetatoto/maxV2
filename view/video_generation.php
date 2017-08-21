@@ -20,6 +20,14 @@
     <!-- Custom style with a fiew things -->
     <link href="view/max.css" rel="stylesheet">
 
+    <style>
+      .check
+      {
+          opacity:0.5;
+          color:#996;
+      }
+    </style>
+
   </head>
 
   <body>
