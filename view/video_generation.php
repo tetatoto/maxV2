@@ -58,6 +58,11 @@
                 <div class="alert alert-danger" role="alert"><strong>Fail !</strong> This is not a valid URL. Please try again ! </div>                
                 <?php
               }
+              elseif (!$isTextPresent) {
+                ?>
+                <div class="alert alert-danger" role="alert"><strong>Fail !</strong> The URL is valid, but Max cannot retrieve the text of the article. Please try an other URL. </div>                
+                <?php
+              }
               else {
                 ?>
                 <div class="alert alert-success" role="alert"><strong>Success !</strong> The URL is correct</div>

@@ -28,6 +28,9 @@ else {
 // Check if Url not valid or valid
 $konotko = urlExists($url);
 
+// Boolean to know if there is some text available in the url or not:
+$isTextPresent = true;
+
 // Initiating the variables that will contain the text paragraphs of the article
 $paragraphs = array();
 
@@ -41,14 +44,21 @@ if ($konotko) {
     $articleDom = getPageContent($url);
     $paragraphs = getTextOfArticle($articleDom);
 
-    // We can then search for images : (the second parameter in the call to getPictures is the number of images we want to DL)
-    $pictureUrls = runPhantomScript(htmlspecialchars($theme));
+    if (empty($paragraphs)) {
+        // There is no text available, we xill ask the user to try an other url
+        $isTextPresent = false;
+    }
+    else {
+        // There is some text available - so we can search for images
+        // We can then search for images : (the second parameter in the call to getPictures is the number of images we want to DL)
+        $pictureUrls = runPhantomScript(htmlspecialchars($theme));
 
-    // DOWNLOADING (The following variable is the number of pictures actually downloaded)
-    $nbPicturesDl = getPictures($pictureUrls, 20);
+        // DOWNLOADING (The following variable is the number of pictures actually downloaded)
+        $nbPicturesDl = getPictures($pictureUrls, 20);
 
-    // RESIZING
-    $resultResizing = resizePictures(320, 210);
+        // RESIZING
+        $resultResizing = resizePictures(320, 210);
+    }
 
 }
 
