@@ -11,7 +11,7 @@ function getPictures($pictureUrls, $number) {
     $pictureUrlsSize = count($pictureUrls);
 
     // We clean the repo containing the previous images
-    $cleaningRepo = shell_exec('rm -rf outputs/*.jpg');
+    $cleaningRepo = shell_exec('sudo rm -rf model/outputs/*.jpg');
 
     // Then we download only the images than are .jpg format
     $cursor = 0;
@@ -33,7 +33,7 @@ function getPictures($pictureUrls, $number) {
             fclose($fp);
             $cursor++;
         }
-        $giving_auth = shell_exec('chmod 777 model/outputs/*.jpg');
+        $giving_auth = shell_exec('sudo chmod 777 model/outputs/*.jpg');
         $current++;
     }
 
