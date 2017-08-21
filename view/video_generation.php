@@ -223,7 +223,7 @@
                           <p>Blablabla</p>-->
                           <label class="btn btn-primary">
                             <img src="<?php echo $currentName; ?>" alt="image" class="img-thumbnail img-check">
-                            <input type="checkbox" class="hidden" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo htmlspecialchars($currentName); ?>" autocomplete="off">
+                            <input type="checkbox" class="hidden" name="<?php echo $currentName; ?>" value="<?php echo $currentName; ?>" autocomplete="off">
                             <!--<span class="custom-control-indicator"></span>-->
                           </label>
                         </div>
@@ -239,6 +239,9 @@
 
                 <!--This is the button that send the form to video_result-->
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Generate the video</button>
+
+                
+                <br><br><br><br><br>
 
                 </form>
 

@@ -29,6 +29,9 @@ for ($j=0; $j < $imageLimit; $j++) {
     }
     $imageCursor++;
 }
+$nbSelectedImages = count($selectedImages);
+
+
 // Here we create the sound File from the final text
 
 $logSound = createSoundFile($finalText);

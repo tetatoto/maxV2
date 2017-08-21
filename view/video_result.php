@@ -71,6 +71,8 @@
                 <p><?php echo $logSound; ?></p>
                 <br>
 
+                <h1>DISPLAYING IMAGES SELECTED</h1>
+                <p>Nb selected images = <?php echo $nbSelectedImages; ?></p>
                 <?php 
                 foreach ($selectedImages as $imagePath) {
                   ?>
