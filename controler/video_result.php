@@ -15,6 +15,8 @@ for ($i=0; $i < $limit; $i++) {
 }
 // Now the variable $finalText contains the complete string
 
+// Now we retrieve the images 
+
 // Here we create the sound File from the final text
 
 $logSound = createSoundFile($finalText);
