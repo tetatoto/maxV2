@@ -24,7 +24,9 @@ $selectedImages = array();
 
 for ($j=0; $j < $imageLimit; $j++) { 
     $currentImageName = 'model/outputs/image'.$j.'.jpg';
-    if (isset($_POST["$currentImageName"])) {
+    // inside the post call, the dot "." becomes an underscore "_"
+    $currentImagePostName = 'model/outputs/image'.$j.'_jpg';
+    if (isset($_POST["$currentImagePostName"])) {
         array_push($currentImageName, $selectedImages);
     }
     $imageCursor++;
