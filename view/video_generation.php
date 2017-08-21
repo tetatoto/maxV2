@@ -17,6 +17,9 @@
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 
+    <!-- Custom style with a fiew things -->
+    <link href="view/max.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -199,14 +202,15 @@
                     $currentName = 'model/outputs/image'.$j.'.jpg';
                     ?>
                     <div class="col-lg-3">
-                      <div class="thumbnail" height="400">
-                        <img src="<?php echo $currentName; ?>" alt="image">
+                      <div class="thumbnail" >
+                        <img src="<?php echo $currentName; ?>" alt="image" style="height:100px;">
                         <div class="caption">
-                          <h3>Thumbnail label</h3>
-                          <p>Blablabla</p>
+                          <!--<h3>Thumbnail label</h3>
+                          <p>Blablabla</p>-->
                           <label class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo htmlspecialchars($currentName); ?>">
-                            <span class="custom-control-indicator"></span>
+                            <img src="<?php echo $currentName; ?>" alt="image" class="img-thumbnail img-check">
+                            <input type="checkbox" class="custom-control-input hidden" name="<?php echo htmlspecialchars($currentName); ?>" value="<?php echo htmlspecialchars($currentName); ?>" autocomplete="off">
+                            <!--<span class="custom-control-indicator"></span>-->
                           </label>
                         </div>
                       </div>
@@ -265,5 +269,14 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- Image Checking -->
+    <script>
+      $(document).ready(function(e){
+            $(".img-check").click(function(){
+            $(this).toggleClass("check");
+          });
+      });  
+    </script>
   </body>
 </html>
