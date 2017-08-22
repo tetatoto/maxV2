@@ -86,6 +86,11 @@
             <p>Nb POST variable Dump = <?php var_dump($_POST); ?></p>
             <br><br>
             <p>Result Video Creation <?php var_dump($runVideoCreationScript); ?></p>
+
+            <video width="640" height="360" controls>
+              <source src="model/outputs/generated_video_step2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video> 
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
 
