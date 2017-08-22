@@ -87,7 +87,7 @@
                 <!--<p>Nb POST variable Dump = <?php //var_dump($_POST); ?></p>-->
                 <br><br><br><br>
                 <!-- FOR TESTING -->
-                <!--<p>Result Video Creation <?php //var_dump($runVideoCreationScript); ?></p>-->
+                <p>Result Video Creation <?php var_dump($runVideoCreationScript); ?></p>
 
                 <br><br><br><br>
 
