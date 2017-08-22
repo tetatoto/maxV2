@@ -37,7 +37,7 @@ echo "final duration is $current_duration"
 
 # 1.2 // Adding the sound file to the video
 
-ffmpeg -y -i "model/outputs/generated_video_step1.mp4" -i "model/outputs/soundFile.mp3" -c copy -shortest -map 0:v0 -map 1:a:0 "model/outputs/generated_video_step2.mp4"
+# ffmpeg -y -i "model/outputs/generated_video_step1.mp4" -i "model/outputs/soundFile.mp3" -c copy -shortest -map 0:v0 -map 1:a:0 "model/outputs/generated_video_step2.mp4"
 
 
 # Giving rights to the videos
