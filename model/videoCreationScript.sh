@@ -28,10 +28,10 @@ do
 
 done
 
-ffmpeg -f concat -i mylist.txt -c copy outputs/generated_video_step1.mp4
+ffmpeg -y -f concat -i mylist.txt -c copy outputs/generated_video_step1.mp4
 
 echo "final duration is $current_duration"
 
 # 1.2 // Adding the sound file to the video
 
-ffmpeg -i "outputs/generated_video_step1.mp4" -i "outputs/soundFile.mp3" -c copy -shortest -map 0:v0 -map 1:a:0 "outputs/generated_video_step2.mp4"
+ffmpeg -y -i "outputs/generated_video_step1.mp4" -i "outputs/soundFile.mp3" -c copy -shortest -map 0:v0 -map 1:a:0 "outputs/generated_video_step2.mp4"
