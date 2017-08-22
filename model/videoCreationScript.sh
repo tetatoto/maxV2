@@ -25,7 +25,7 @@ echo "_______________________________________________________________"
 
 while [ $current_duration -lt $video_duration ]
 do 
-	printf "file '%s'\n" model/outputs/template_woman.mp4 >> model/mylist.txt;
+	printf "file '%s'\n" model/templates/template_woman.mp4 >> model/mylist.txt;
 	((current_duration=current_duration+template_duration))
 	#echo "current duration is $current_duration"
 
