@@ -27,7 +27,7 @@ for ($j=0; $j < $imageLimit; $j++) {
     // inside the post call, the dot "." becomes an underscore "_"
     $currentImagePostName = 'model/outputs/image'.$j.'_jpg';
     if (isset($_POST["$currentImagePostName"])) {
-        array_push($currentImageName, $selectedImages);
+        array_push($selectedImages, $currentImageName);
     }
     $imageCursor++;
 }
