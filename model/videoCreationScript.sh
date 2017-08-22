@@ -25,13 +25,13 @@ echo "_______________________________________________________________"
 
 while [ $current_duration -lt $video_duration ]
 do 
-	printf "file '%s'\n" model/outputs/template_woman.mp4 >> mylist.txt;
+	printf "file '%s'\n" model/outputs/template_woman.mp4 >> model/mylist.txt;
 	((current_duration=current_duration+template_duration))
 	#echo "current duration is $current_duration"
 
 done
 
-ffmpeg -y -f concat -i mylist.txt -c copy outputs/generated_video_step1.mp4
+ffmpeg -y -f concat -i model/mylist.txt -c copy model/outputs/generated_video_step1.mp4
 
 echo "final duration is $current_duration"
 
