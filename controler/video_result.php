@@ -46,6 +46,8 @@ $gender = $_POST['gender']; // This will contain "female" or "male"
 $subtitles = $_POST['subtitles']; // This will contain "yes" or "no"
 // END
 
+
+$cleaningOldMovieFiles = shell_exec("rm -rf model/outputs/*.mp4");
 // Run script create template with right duration & sound (absolute path seems to be necessary here ...)
 $runVideoCreationScript = shell_exec("/var/www/html/maxV2/model/videoCreationScript.sh");
 
