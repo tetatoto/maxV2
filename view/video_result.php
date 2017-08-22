@@ -84,6 +84,8 @@
                 ?>
 
             <p>Nb POST variable Dump = <?php var_dump($_POST); ?></p>
+            <br><br>
+            <p>Result Video Creation <?php var_dump($runVideoCreationScript); ?></p>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
 
