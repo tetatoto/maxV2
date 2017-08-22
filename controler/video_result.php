@@ -47,7 +47,10 @@ $subtitles = $_POST['subtitles']; // This will contain "yes" or "no"
 // END
 
 
+// A bit of cleaning : the old mp4 files and the mylist containing the number of time the template should be looped
 $cleaningOldMovieFiles = shell_exec("rm -rf model/outputs/*.mp4");
+$cleaningMylistFile = file_put_contents("model/mylist.txt", "");
+
 // Run script create template with right duration & sound (absolute path seems to be necessary here ...)
 $runVideoCreationScript = shell_exec("/var/www/html/maxV2/model/videoCreationScript.sh");
 
