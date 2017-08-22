@@ -16,6 +16,9 @@ let 'current_duration=0'
 echo "The duration of the template is $template_duration seconds"
 echo "_______________________________________________________________"
 
+rm -rf generated_video_step1.mp4
+rm -rf generated_video_step2.mp4
+
 # 1.1 // loop to get the full duration video
 
 # Initiate the final video with the right duration looping the template
