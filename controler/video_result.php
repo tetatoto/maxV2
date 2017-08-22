@@ -3,6 +3,8 @@ include("model/createSoundFile.php");
 
 
 // First we retrieve the POST variables send by the video_generation page
+
+// BEGIN retrieving the TEXT
 $cursor = 0;
 $limit = 30;
 $finalText = "";
@@ -14,8 +16,9 @@ for ($i=0; $i < $limit; $i++) {
     $cursor++;
 }
 // Now the variable $finalText contains the complete string
+// END retrieving the TEXT
 
-// Now we retrieve the images 
+// BEGIN Now we retrieve the images 
 $imageCursor = 0;
 $imageLimit = 30;
 
@@ -32,11 +35,19 @@ for ($j=0; $j < $imageLimit; $j++) {
     $imageCursor++;
 }
 $nbSelectedImages = count($selectedImages);
+// END retrieving images
 
 
 // Here we create the sound File from the final text
-
 $logSound = createSoundFile($finalText);
+
+// BEGIN we retrieve the options : with / without subtitles and female / male
+$gender = $_POST['gender']; // This will contain "female" or "male"
+$subtitles = $_POST['subtitles']; // This will contain "yes" or "no"
+// END
+
+
+
 
 
 
