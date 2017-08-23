@@ -110,6 +110,9 @@
                   <source src="model/outputs/generated_video_step3.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
+
+                <h2>  Result Video Creation </h2>
+                <p> <?php var_dump($runAddPicturesScript); ?></p>
                 </div>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
