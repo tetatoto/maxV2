@@ -41,4 +41,4 @@ echo "final duration is $current_duration"
 
 
 # Giving rights to the videos
-chmod 777 outputs/*.mp4
+chmod 777 model/outputs/*.mp4
