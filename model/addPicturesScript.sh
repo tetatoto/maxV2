@@ -20,7 +20,7 @@
 # Step 2 : adding a sound on this template
 # Step 3 : adding images to the video
 
-video_duration="$(mp3info -p "%S\n" model/outputs/audio_voice_rss.mp3)"
+video_duration="$(mp3info -p "%S\n" model/outputs/soundFile.mp3)"
 
 let 'current_timeline=0'
 let 'limit=video_duration-10'
