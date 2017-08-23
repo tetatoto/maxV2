@@ -112,7 +112,7 @@
                 </video>
 
                 <h2>  Result Video Creation </h2>
-                <p> <?php var_dump($runAddPicturesScript); ?></p>
+                <p> <?php //var_dump($runAddPicturesScript); ?></p>
                 </div>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
