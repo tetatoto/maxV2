@@ -87,6 +87,7 @@
                 <!--<p>Nb POST variable Dump = <?php //var_dump($_POST); ?></p>-->
                 <br><br><br><br>
                 <!-- FOR TESTING -->
+                <div class="col-lg-12">
                 <h2>  Result Video Creation </h2>
                 <p> <?php var_dump($runVideoCreationScript); ?></p>
 
@@ -103,7 +104,7 @@
                   <source src="model/outputs/generated_video_step2.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
-
+                </div>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
 
