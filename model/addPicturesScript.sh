@@ -28,12 +28,15 @@ let 'next=10'
 let 'cursor=2'
 let 'nextCursor=3'
 
+# You can see that the frequence of displaying images is every 10 seconds
+# There are many variables in order to avoid script failures ...
+
 for picturePath in "$@"
 do
     echo "$picturePath";
     if [ $current_timeline -lt $limit ]
     then
-        ffmpeg -y -i "model/outputs/generated_video_step${cursor}.mp4" -i "$picturePath" -filter_complex "[0:v][1:v] overlay=640-320-0:0:enable='between(t,${current_timeline},${next})'" -pix_fmt yuv420p -c:a copy "model/outputs/generated_video_step${nextCursor}.mp4";
+        ffmpeg -y -i "model/outputs/generated_video_step${cursor}.mp4" -i "$picturePath" -filter_complex "[0:v][1:v] overlay=640-330-0:0:enable='between(t,${current_timeline},${next})'" -pix_fmt yuv420p -c:a copy "model/outputs/generated_video_step${nextCursor}.mp4";
         ((current_timeline=current_timeline+10));
         ((next=next+10));
         ((cursor=cursor+1));
@@ -41,4 +44,5 @@ do
     fi
 done
 
+# Just to have a final name for the final video :
 cp "model/outputs/generated_video_step${cursor}.mp4" "model/outputs/generated_video_final.mp4"

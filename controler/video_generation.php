@@ -57,7 +57,7 @@ if ($konotko) {
         $nbPicturesDl = getPictures($pictureUrls, 20);
 
         // RESIZING
-        $resultResizing = resizePictures(320, 220);
+        $resultResizing = resizePictures(330, 220);
     }
 
 }
