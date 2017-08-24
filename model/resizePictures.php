@@ -9,7 +9,7 @@ function resizePictures($width, $height) {
     $runConvertToJpg = shell_exec($ConvertToJpg);
 
     // $give_auth = shell_exec("chmod 777 model/outputs/*");
-    $commandLine = 'mogrify -resize '.$width.'x'.$height.' model/outputs/*.jpg';
+    $commandLine = 'mogrify -resize '.$width.'x'.$height.'^ model/outputs/*.jpg';
     $runCommand = shell_exec($commandLine);
 
     return $runCommand;
