@@ -40,3 +40,5 @@ do
         ((nextCursor=nextCursor+1));
     fi
 done
+
+cp "model/outputs/generated_video_step${cursor}.mp4" "model/outputs/generated_video_final.mp4"
