@@ -25,6 +25,7 @@ video_duration="$(mp3info -p "%S\n" model/outputs/soundFile.mp3)"
 let 'current_timeline=0'
 let 'limit=video_duration-10'
 let 'next=10'
+let 'cursor=2'
 
 for picturePath in "$@"
 do
