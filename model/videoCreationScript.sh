@@ -21,11 +21,23 @@ echo "_______________________________________________________________"
 
 # 1.1 // loop to get the full duration video
 
+gender='woman'
+# knowing the argument fot the template : wowan or man (the default answer is female)
+if [ $1 = "female" ]
+then
+	gender='woman';
+elif [ $1 = "male" ]
+then
+	gender='man';
+else
+	gender='woman';
+fi
+
 # Initiate the final video with the right duration looping the template
 
 while [ $current_duration -lt $video_duration ]
 do 
-	printf "file '%s'\n" templates/template_woman.mp4 >> model/mylist.txt;
+	printf "file '%s'\n" "templates/template_${gender}.mp4" >> model/mylist.txt;
 	((current_duration=current_duration+template_duration))
 	#echo "current duration is $current_duration"
 
