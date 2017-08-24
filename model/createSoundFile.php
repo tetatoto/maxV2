@@ -5,7 +5,7 @@ function createSoundFile($finalText) {
     $tts = new VoiceRSS;
     $voice = $tts->speech([
         'key' => 'b3a50426f7914067aa6d40ce1d46ae71',
-        'hl' => 'fr-ca',
+        'hl' => 'fr-fr',
         'src' => $finalText,
         'r' => '0',
         'c' => 'mp3',

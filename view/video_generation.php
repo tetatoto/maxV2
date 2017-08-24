@@ -28,8 +28,8 @@
       }
 
       .img-thumbnail {
-        height: 210px;
-        width: 320px;
+        height: 220px;
+        width: 330px;
         border: solid 1px #cccccc;
       }
     </style>

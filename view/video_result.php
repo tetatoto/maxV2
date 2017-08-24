@@ -62,16 +62,24 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>VIDEO RESULT PAGE</h1>
+                <!-- The text -->
+                <h2>This is the script of your video :</h2>
                 <p><?php echo $finalText; ?></p>
+                <!-- The sound file .mp3 -->
+                <h2>This is your sound file :</h2>
                 <audio controls>
                     <source src="model/outputs/soundFile.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio> 
                 <br>
-                <p><?php echo $logSound; ?></p>
-                <br>
 
-                <h1>DISPLAYING IMAGES SELECTED</h1>
+                <!-- FOR TESTING -->
+                <!-- <p><?php //echo $logSound; ?></p>
+                <br> -->
+                <!-- END TESTING -->
+
+                <!-- Images selected -->
+                <h2>You selected the following images : </h2>
                 <p>Nb selected images = <?php echo $nbSelectedImages; ?></p>
                 <?php 
                 foreach ($selectedImages as $imagePath) {
@@ -83,15 +91,18 @@
                 }
                 ?>
                 <p> End displaying images </p>
-                <!-- FOR TESTING -->
-                <!--<p>Nb POST variable Dump = <?php //var_dump($_POST); ?></p>-->
                 <br><br><br><br>
+
                 <!-- FOR TESTING -->
+
+                <!--<p>Nb POST variable Dump = <?php //var_dump($_POST); ?></p>-->
+                
+
                 <!-- <div class="col-lg-12">
                 <h2>  Result Video Creation </h2>
                 <p> <?php //var_dump($runVideoCreationScript); ?></p> -->
 
-                <br><br><br><br>
+                <!-- <br><br><br><br> -->
                 
                 <!-- <h2>GENERATED VIDEO 1</h2>
                 <video width="640" height="360" controls>
@@ -105,15 +116,19 @@
                   Your browser does not support the video tag.
                 </video> -->
 
-                <h2>GENERATED VIDEO FINAL</h2>
+                <!-- END TESTING -->
+
+                <!-- Final Video Displayed -->
+                <h2>Here is your video !</h2>
                 <video width="640" height="360" controls>
                   <source src="model/outputs/generated_video_final.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
 
-                <h2>  Result Video Creation </h2>
+                <!-- <h2>  Result Video Creation </h2> -->
                 <p> <?php //var_dump($runAddPicturesScript); ?></p>
                 </div>
+                <br><br>
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
 
