@@ -105,9 +105,9 @@
                   Your browser does not support the video tag.
                 </video>
 
-                <h2>GENERATED VIDEO X</h2>
+                <h2>GENERATED VIDEO 4</h2>
                 <video width="640" height="360" controls>
-                  <source src="model/outputs/generated_video_step".$nbSelectedImages.".mp4" type="video/mp4">
+                  <source src="model/outputs/generated_video_step4.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
 
