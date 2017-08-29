@@ -18,7 +18,7 @@ $client->setScopes('https://googleapis.com/auth/youtube');
 
 $youtube = new Google_Service_YouTube($client);
 
-
+$loginUrl = $client->createAuthUrl();
 
 
 
@@ -26,5 +26,5 @@ $youtube = new Google_Service_YouTube($client);
 
 <h2>Accès interdit</h2>
 
-<p>Vous devez <a href="<?php $client->createAuthUrl(); ?>">autorisez</a> autorisez  l'appli a acceder a votre compte youtube</p>
+<p>Vous devez <a href="<?= $loginUrl; ?>">autorisez</a>   l'appli a acceder a votre compte youtube</p>
 
