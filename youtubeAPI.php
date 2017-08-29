@@ -37,7 +37,8 @@ if ($client->getAccessToken()) {
     $snippet = new Google_Service_YouTube_VideoSnippet();
     $snippet->setTitle('max video');
     $snippet->setDescription('video de test');
-    $snippet->setCategory(17);
+    $snippet->setTags(['tag1','tag2','tag3']);
+    $snippet->setCategoryId(17);
 
     $status = new Google_Service_YouTube_VideoStatus(); 
     $status->setPrivacyStatus('private');
