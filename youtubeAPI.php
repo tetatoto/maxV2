@@ -16,7 +16,7 @@ $client->setCLientSecret($clientSecret);
 $client->setRedirectUri('http://vps441713.ovh.net/maxV2/youtubeAPI.php');
 $client->setScopes('https://googleapis.com/auth/youtube');
 
-$youtube = new Google_Service_Youtube($client);
+$youtube = new Google_Service_YouTube($client);
 
 
 
