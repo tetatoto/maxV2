@@ -33,7 +33,7 @@ if (isset($_SESSION['token'])) {
 }
 
 
-if (client->getAccessToken()) {
+if ($client->getAccessToken()) {
     $snippet = new Google_Service_YouTube_VideoSnippet();
     $snippet->setTitle('max video');
     $snippet->setDescription('video de test');
