@@ -54,13 +54,18 @@ if ($client->getAccessToken()) {
     $request = $youtube->videos->insert('status,snippet', $video);
 
     // $file = dirname(__DIR__).'video.mp4';
-    $file = dirname(__DIR__).'/model/templates/template_man.mp4';
+    $file = '/var/www/html/maxV2/model/templates/template_man.mp4';
 
     $media = new Google_Http_MediaFileUpload($client, $request, 'video/*', file_get_contents($file));
 
     $video = $client->execute($request);
 
-    var_dump($video);
+    // var_dump($video);
+    ?>
+
+    <h1>video bien uploadée </h1>
+    <p>infos sur la video (var dump video) : <?= var_dump($video); ?></p>
+    <?php
 
 
 
