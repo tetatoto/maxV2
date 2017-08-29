@@ -1,6 +1,7 @@
 <?php
 include("model/createSoundFile.php");
 include("model/runAddPicturesScript.php");
+require('vendor/autoload.php');
 
 
 // First we retrieve the POST variables send by the video_generation page
@@ -58,7 +59,10 @@ $runVideoCreationScript = shell_exec("/var/www/html/maxV2/model/videoCreationScr
 // RUn script that add the selected images to the video
 $runAddPicturesScript = runAddPicturesScript($selectedImages);
 
+// API Youtube data
 
+$clientID =  "971828143374-0d0fn2ao293mlcg99kvo42ibeqg03jcv.apps.googleusercontent.com";
+$clientSecret = "z3V_PosIm0VhLkvUgRsgmcmy";
 
 
 
