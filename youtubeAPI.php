@@ -54,7 +54,7 @@ if ($client->getAccessToken()) {
     $request = $youtube->videos->insert('status,snippet', $video);
 
     // $file = dirname(__DIR__).'video.mp4';
-    $file = 'model/templates/template_man.mp4';
+    $file = dirname(__DIR__).'/model/templates/template_man.mp4';
 
     $media = new Google_Http_MediaFileUpload($client, $request, 'video/*', file_get_contents($file));
 
