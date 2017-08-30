@@ -59,18 +59,18 @@ $runVideoCreationScript = shell_exec("/var/www/html/maxV2/model/videoCreationScr
 // RUn script that add the selected images to the video
 $runAddPicturesScript = runAddPicturesScript($selectedImages);
 
-// API Youtube data
+// API Youtube data // NOT HERE ANYMORE
 
-$clientID =  "971828143374-0d0fn2ao293mlcg99kvo42ibeqg03jcv.apps.googleusercontent.com";
-$clientSecret = "z3V_PosIm0VhLkvUgRsgmcmy";
+// $clientID =  "971828143374-0d0fn2ao293mlcg99kvo42ibeqg03jcv.apps.googleusercontent.com";
+// $clientSecret = "z3V_PosIm0VhLkvUgRsgmcmy";
 
-$client = new Google_Client();
-$client->setClientId($clientID);
-$client->setCLientSecret($clientSecret);
-$client->setRedirectUri('');
-$client->setScopes('');
+// $client = new Google_Client();
+// $client->setClientId($clientID);
+// $client->setCLientSecret($clientSecret);
+// $client->setRedirectUri('');
+// $client->setScopes('');
 
-$youtube = new Google_Service_Youtube($client);
+// $youtube = new Google_Service_Youtube($client);
 
 
 

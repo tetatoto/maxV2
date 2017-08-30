@@ -238,7 +238,7 @@
                 <h2>IV. Run the generation of the video</h2>
 
                 <!--This is the button that send the form to video_result-->
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Generate the video</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Generate the video (This might takes a few minutes !)</button>
 
                 
                 <br><br><br><br><br>
