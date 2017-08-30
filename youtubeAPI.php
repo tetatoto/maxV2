@@ -71,7 +71,7 @@ if ($client->getAccessToken()) {
     );
     $media->setFileSize(filesize($filePath));
 
-    / Read the media file and upload it chunk by chunk.
+    //  Read the media file and upload it chunk by chunk.
     $status = false;
     $handle = fopen($filePath, "rb");
     while (!$status && !feof($handle)) {
