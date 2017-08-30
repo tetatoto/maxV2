@@ -10,7 +10,7 @@ This project was developped by me,  **Théophile Debauche**, during an internshi
 
 ## Code Example & Architecture
 
-...
+```PHP
 if (empty($paragraphs)) {
     // There is no text available, we will ask the user to try an other url
     $isTextPresent = false;
@@ -26,7 +26,7 @@ else {
     // RESIZING
     $resultResizing = resizePictures(330, 220);
 }
-...
+```
 
 The Code is organized with the MVC architecture. So you will find:
 
@@ -55,38 +55,39 @@ NB : The project is up and running in a OVH VPS on Debian 8 with all those tools
 ### Apache
 
 Install a web server on Debian 8 (here for a VPS) - [see more here](https://docs.ovh.com/display/public/CRVPS/Installation+d'un+serveur+web+sous+Debian+8)
-...
+
+```bash
 apt-get update
 apt-get upgrade
 apt-get install apache2
-...
+```
 
 Now you should have an index.php on the repository /var/www/html/. You can check this by running :
 
-...
+```bash
 cat /var/www/html/index.html
-...
+```
 
 To restart the apache server you should run :
 
-...
+```bash
 /etc/init.d/apache2 restart
-...
+```
 
 You can check the logs here :
 
-...
+```bash
 ls /var/log/apache2/
 access.log  error.log  other_vhosts_access.log
-...
+```
 
 ### PHP 5.6
 
 Install PHP :
 
-...
+```bash
 apt-get install php5
-...
+```
 
 (This project is working with PHP 5.6).
 
@@ -94,64 +95,70 @@ apt-get install php5
 
 To install composer with command line you can run : ([more info here](https://getcomposer.org/download/))
 
-...
+```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
-...
+```
 
 ### FFMPEG
 
 To install FFMPEG on Debian you can do the followings : (you will have to adapt if not on Debian) [more info here](https://superuser.com/questions/286675/how-to-install-ffmpeg-on-debian)
 
-...
+```bash
 sudo echo deb http://www.deb-multimedia.org testing main non-free \
                   >>/etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install deb-multimedia-keyring
 sudo apt-get update
 sudo apt-get install ffmpeg
-...
+```
 
 ### MP3INFO
 
 Simply run :
-...
+
+```bash
 apt-get install mp3info
-...
+```
 
 ### PhantomJS
 
 To install phantomJS on Debian, run the followings (found on [This website](https://tecadmin.net/install-phantomjs-on-ubuntu/#))
 
 Install the required packages
-...
+
+```bash
 sudo apt-get update
 sudo apt-get install build-essential chrpath libssl-dev libxft-dev
 sudo apt-get install libfreetype6 libfreetype6-dev libfontconfig1 libfontconfig1-dev
-...
+```
 
 Download the latest version of phantom from the [official website](http://phantomjs.org/download.html) 
-...
+
+```bash
 wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
 tar xvjf phantomjs-2.1.1-linux-x86_64.tar.bz2 -C /usr/local/share/
-...
+```
 
 Then create a soft link phantomjs binary file to system bin directory
-...
+
+```bash
 sudo ln -sf /usr/local/share/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin
-...
+```
 
 Check if it worked by checking the version of phantom :
-...
+
+```bash
 phantomjs --version
-...
+```
 
 Then you will be able to run the phantomJS command line by simply running :
-...
+
+```bash
 phantomjs
-...
+```
 
 ### Voice RSS
 
@@ -165,9 +172,10 @@ NB : You will need to register in order to have an API Key.
 
 Just follow the instructions [there](https://www.imagemagick.org/script/download.php) .
 It seems that this command is enough :
-...
+
+```bash
 apt-get install mogrify
-...
+```
 
 
 ### YouTube API
@@ -180,9 +188,10 @@ You should watch first [this video tutorial](https://www.grafikart.fr/tutoriels/
 * You should set with precision the redirect URL (the page that will be called after the authentification by Google on your website).
 
 To install the Google Client Library you will need to use Composer :
-...
+
+```bash
 php composer.phar require google/apiclient:^2.0
-...
+```
 
 Then if you manage to do the previous steps, you will be able to run a first test (the one from the tutorial is a bit old but step by step, or you can use the one from the youtube documentation [here](https://developers.google.com/youtube/v3/quickstart/php)).
 
@@ -190,9 +199,10 @@ Then if you manage to do the previous steps, you will be able to run a first tes
 
 I did not write a lot of tests for this project, all the tests I wrote are commented in the code. If you want to test any part, you just have to uncomment those test and run the application.
 You can also access the logs of Apache with the following command :
-...
+
+```bash
 cat /var/log/apache2/error.log
-...
+```
 
 ## Contributors
 
