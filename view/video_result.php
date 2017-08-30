@@ -126,7 +126,7 @@
                 </video>
 
                 <h2>You can upload it on your YouTube channel (in private) by clicking this button</h2>
-                <button type="button" class="btn btn-primary btn-lg btn-block" onclick="index.php?section=video_upload">Upload the video on YouTube </button>
+                <a href="index.php?section=video_upload"><button type="button" class="btn btn-primary btn-lg btn-block" >Upload the video on YouTube </button></a>
 
                 <!-- <h2>  Result Video Creation </h2> -->
                 <p> <?php //var_dump($runAddPicturesScript); ?></p>
