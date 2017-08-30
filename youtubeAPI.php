@@ -55,6 +55,7 @@ if ($client->getAccessToken()) {
 
     // $file = dirname(__DIR__).'video.mp4';
     $file = '/var/www/html/maxV2/model/templates/template_man.mp4';
+    echo file_get_contents($file);
 
     $media = new Google_Http_MediaFileUpload($client, $request, 'video/*', file_get_contents($file));
 
