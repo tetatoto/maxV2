@@ -51,21 +51,45 @@ if ($client->getAccessToken()) {
     
     $client->setDefer(true);
 
-    $request = $youtube->videos->insert('status,snippet', $video);
+    $request = $youtube->videos->insert("status,snippet", $video);
 
     // $file = dirname(__DIR__).'video.mp4';
-    $file = '/var/www/html/maxV2/model/templates/template_man.mp4';
-    echo file_get_contents($file);
+    $filePath = '/var/www/html/maxV2/model/templates/template_man.mp4';
+    // echo file_get_contents($file);
 
-    $media = new Google_Http_MediaFileUpload($client, $request, 'video/*', file_get_contents($file));
+    $chunkSizeBytes = 1 * 1024 * 1024;
 
-    $video = $client->execute($request);
+
+    // $media = new Google_Http_MediaFileUpload($client, $request, 'video/*', file_get_contents($file));
+    $media = new Google_Http_MediaFileUpload(
+        $client,
+        $request,
+        'video/*',
+        null,
+        true,
+        $chunkSizeBytes
+    );
+    $media->setFileSize(filesize($filePath));
+
+    / Read the media file and upload it chunk by chunk.
+    $status = false;
+    $handle = fopen($filePath, "rb");
+    while (!$status && !feof($handle)) {
+      $chunk = fread($handle, $chunkSizeBytes);
+      $status = $media->nextChunk($chunk);
+    }
+
+    fclose($handle);
+    $client->setDefer(false);
+
+
+    // $video = $client->execute($request);
 
     // var_dump($video);
     ?>
 
     <h1>video bien uploadée </h1>
-    <p>infos sur la video (var dump video) : <?= var_dump($video); ?></p>
+    <p>infos sur la video (var dump video) : <?php //var_dump($video); ?></p>
     <?php
 
 
