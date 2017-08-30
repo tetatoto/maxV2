@@ -106,10 +106,10 @@
                 <label for="genderChoice">Please choose the gender of your presentator</label><br>
                 <div class="btn-group" data-toggle="buttons" id="genderChoice">
                   <label class="btn btn-primary active">
-                    <input type="radio" name="gender" id="option1" autocomplete="off" value="male" checked> Male (Bob)
+                    <input type="radio" name="male" id="option1" autocomplete="off" value="male" checked> Male (Bob)
                   </label>
                   <label class="btn btn-primary">
-                    <input type="radio" name="gender" id="option2" autocomplete="off" value="female"> Female (Alice)
+                    <input type="radio" name="female" id="option2" autocomplete="off" value="female"> Female (Alice)
                   </label>
                 </div>
 
