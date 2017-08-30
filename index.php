@@ -23,3 +23,6 @@ elseif ($_GET['section'] == 'video') {
 elseif ($_GET['section'] == 'video_result') {
     include_once('controler/video_result.php');
 }
+elseif ($_GET['section'] == 'video_upload') {
+    include_once('controler/video_upload.php');
+}
