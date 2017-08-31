@@ -1,6 +1,6 @@
 <?php
 
-include_once("runPhantomScript.php");
+
 
 // We suppose that the variable $theme is already on the format of a query (james+bond+daniel+craig for example)
 // The variable $number is the number of images you want ot download

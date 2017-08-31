@@ -3,7 +3,11 @@
 <?php
 require('vendor/autoload.php');
 
+
+
 // API Youtube data
+// Information about the API : https://developers.google.com/youtube/v3/code_samples/php#upload_a_video
+// You will have to get your own 3 keys that are there :
 
 $apiKey = "AIzaSyCM4hG8lmXY8sZDatjaElYZVfroUY2sKnE";
 $clientID =  "971828143374-0d0fn2ao293mlcg99kvo42ibeqg03jcv.apps.googleusercontent.com";

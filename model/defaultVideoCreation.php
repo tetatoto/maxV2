@@ -26,7 +26,7 @@ function defaultVideoCreation($searchContent) {
 
 
     // First we get the list of articles found by Max on the choosen subject (we just choose the first one)
-    $maxArticles = 1;
+    $maxArticles = 5;
     $articles = getArticleList($searchContent, $maxArticles);
     $nbArticles = count($articles);
 

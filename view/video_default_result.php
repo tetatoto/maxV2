@@ -68,6 +68,8 @@
                 else {
                     ?>
                     <h2>There was a problem. The video couldn't be created. Please try again with the web interface !</h2>
+
+
                     <?php
                 }
                 ?>
