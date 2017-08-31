@@ -12,6 +12,7 @@ include_once("createQuery.php");
 include_once("getPictures.php");
 include_once("createSoundFile.php");
 include_once("runAddPicturesScript.php");
+include_once("resizePictures.php");
 
 function defaultVideoCreation($searchContent) {
     $isWorking = true;
