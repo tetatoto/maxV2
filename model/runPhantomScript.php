@@ -15,7 +15,7 @@ function runPhantomScript($theme) {
     $pictureUrls = array();
 
     // I made several tries because sometimes the first script run is always failing
-    while ($nbTry < 10 && $currentSize < $wantedSize) {
+    while ($nbTry < 20 && $currentSize < $wantedSize) {
         // Here we run the phantomJS script (assuming phantom is correctly installed on the vps) and we store the logs in a variable
         $logScriptPhantom = shell_exec($runScriptCommand);
 
