@@ -2,6 +2,7 @@
 
 include_once("model/defaultVideoCreation.php");
 
+
 //  We retrieve the search content, that can comes from JARVIS GET request or from the web IHM through POST.
 $searchContent = "";
 if (isset($_POST['searchContent'])) {
