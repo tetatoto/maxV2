@@ -17,14 +17,6 @@
     <!-- Custom styles for this template -->
     <link href="starter-template.css" rel="stylesheet">
 
-    <style>
-      .img-thumbnail {
-        height: 210px;
-        width: 320px;
-        border: solid 1px #cccccc;
-      }
-    </style>
-
   </head>
 
   <body>
@@ -57,27 +49,33 @@
         <br>
         <br>
 
-        <br><br>
-
         <div class="row">
             <div class="col-lg-12">
-                <h1>VIDEO UPLOAD ON YOUTUBE PAGE</h1>
-
+                <h1>Max has heard your request. Here is the result :</h1>
                 <?php
-                if ($access) {
+                if ($isWorking) {
                     ?>
-                    <div class="alert alert-success" role="alert"><strong>Success !</strong> The video has been uploaded :) You can see it in your <strong>"Creator Studio"</strong> on your YouTube Account </div>
+                    <h2>Here is your video !</h2>
+                    <video width="640" height="360" controls>
+                    <source src="model/outputs/generated_video_final.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video>
+
+                    <h2>You can upload it on your YouTube channel (in private) by clicking this button</h2>
+                    <a href="index.php?section=video_upload"><button type="button" class="btn btn-primary btn-lg btn-block" >Upload the video on YouTube </button></a>
                     <?php
                 }
                 else {
                     ?>
-                    <div class="alert alert-danger" role="alert"><strong>You are not connected to Google !</strong> Please <a href="<?= $loginUrl; ?>">connect here</a></div>
+                    <h2>There was a problem. The video couldn't be created. Please try again with the web interface !</h2>
                     <?php
                 }
                 ?>
+                
+              
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row --> 
-
+      
 
     </div>
 

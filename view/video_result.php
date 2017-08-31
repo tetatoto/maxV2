@@ -117,7 +117,8 @@
                 </video> -->
 
                 <!-- END TESTING -->
-
+            </div>
+            <div class="col-lg-12">
                 <!-- Final Video Displayed -->
                 <h2>Here is your video !</h2>
                 <video width="640" height="360" controls>

@@ -2,6 +2,11 @@
 
 require('vendor/autoload.php');
 
+// The variable $access will contain a boolean indicating if the user is logged into its Google account or not.
+// It will depend on thepresence of the access token which is created by logging into a google account in the url created by the function $client->createAuthUrl();
+// Once you are logged in, it will redirect you to the "redirectUrl" you choose when setting the $client->setRedirectUri() AND in you google developer Oauth Console.
+// REMEMBER THAT YOU HAVE TO SET BOTH the $client->setRedirectUri() AND the redirect url input in the google developer Oauth Console
+
 $access = false;
 
 // API Youtube data
@@ -51,7 +56,7 @@ if ($client->getAccessToken()) {
     $video->setSnippet($snippet);
     $video->setStatus($status);
 
-    
+    // This parameter block the request the time you want in order to set the parameters and to upload the media
     $client->setDefer(true);
 
     $request = $youtube->videos->insert("status,snippet", $video);
@@ -59,6 +64,7 @@ if ($client->getAccessToken()) {
     // $file = dirname(__DIR__).'video.mp4';
     $filePath = '/var/www/html/maxV2/model/outputs/generated_video_final.mp4';
 
+    // The way we use to upload the media is chunk by chunk (it is the only working way I found)
     $chunkSizeBytes = 1 * 1024 * 1024;
 
 
