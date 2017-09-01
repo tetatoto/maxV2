@@ -30,6 +30,7 @@ function runPhantomScript($theme) {
         // FOR TESTING :
         echo '<p>current size = '.$currentSize.'</p>';
         echo '<p>nb try = '.$nbTry.'</p>';
+        echo '<p>logs are = '.$logScriptPhantom.'</p>';
         $nbTry++;
     }
 
