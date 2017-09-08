@@ -21,7 +21,7 @@ page.open(url, function (status) {
             console.log("HERE 1");
             setTimeout(function () {
                 console.log("HERE 2");
-                page.evaluate(function() {
+                var eval = page.evaluate(function() {
                     console.log("HERE 3");
                     var j=-1;
                     var image_urls = new Array();
@@ -33,9 +33,10 @@ page.open(url, function (status) {
                         if(images[q].href.indexOf("/imgres?imgurl=http")>0) {
                             image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
                         }
-                }
+                    }
                 // page is redirecting.
-            });
+                });
+                console.log(eval);
             }, 5000);
         }        
     } catch (ex) {
