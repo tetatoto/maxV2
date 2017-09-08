@@ -17,9 +17,9 @@ page.onLoadFinished = function(){
 
     var urls = page.evaluate(function(){
         var image_urls = new Array;
-        var images = document.getElementsByTagName("img");
+        var images = document.getElementsByTagName("a");
         for(q = 0; q < images.length; q++){
-            image_urls.push(images[q].src);
+            image_urls.push(images[q].href);
             // if(images[q].href.indexOf("/imgres?imgurl=http")>0){
                 
             //     // image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
