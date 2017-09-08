@@ -25,7 +25,11 @@ page.onLoadFinished = function(){
     });    
 
     console.log(urls.length);
-    console.log(urls[0]);
+    for (var i = 0; i < urls.length; i++) {
+        var element = urls[i];
+        console.log(urls[i]);
+    }
+    
 
     phantom.exit();
 }
