@@ -19,7 +19,7 @@ page.onLoadFinished = function(){
         var image_urls = new Array;
         var images = document.getElementsByTagName("a");
         for(q = 0; q < images.length; q++){
-            image_urls.push("oh un url joli");
+            image_urls.push(decodeURIComponent(images[q].href));
             if(images[q].href.indexOf("/imgres?imgurl=http")>0){
                 
                 // image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
