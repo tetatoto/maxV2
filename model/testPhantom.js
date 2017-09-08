@@ -1,4 +1,5 @@
 var page = require('webpage').create();
+system = require('system');
 
 if (system.args.length === 1) {
   console.log('Usage: script.js <some subject query>');
