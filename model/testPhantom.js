@@ -20,7 +20,8 @@ page.onLoadFinished = function(){
         var images = document.getElementsByTagName("a");
         for(q = 0; q < images.length; q++){
             if(images[q].href.indexOf("/imgres?imgurl=http")>0){
-                image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                image_urls.push("oh un url joli");
+                // image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
             }
         }
         return image_urls;
