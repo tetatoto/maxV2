@@ -6,7 +6,7 @@ if (system.args.length === 1) {
   phantom.exit();
 }
 
-var url = 'https://www.google.fr/search?q='+system.args[1]+'&source=lnms&tbm=isch';
+var url = 'https://www.bing.com/images/search?q='+system.args[1];
 
 console.log("This is the url");
 console.log(url);
@@ -19,7 +19,7 @@ page.onLoadFinished = function(){
         var image_urls = new Array;
         var images = document.getElementsByTagName("a");
         for(q = 0; q < images.length; q++){
-            image_urls.push(images[q].href);
+            image_urls.push(images[q].m);
             // if(images[q].href.indexOf("/imgres?imgurl=http")>0){
                 
             //     // image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
@@ -27,6 +27,13 @@ page.onLoadFinished = function(){
         }
         return image_urls;
     });    
+
+
+    {"cid":"KecjEWTJ",
+    "purl":"http://starconnectmedia.wordpress.com/2013/01/10/oscars-to-celebrate-james-bond/",
+    "murl":"http://starconnectmedia.files.wordpress.com/2013/01/james-bond.jpg",
+    "turl":"https://tse1.mm.bing.net/th?id=OIP.KecjEWTJQkP2blVch17zywDUEs&pid=15.1",
+    "md5":"29e7231164c94243f66e555c875ef3cb"}
 
     console.log(urls.length);
     for (var i = 0; i < urls.length; i++) {
