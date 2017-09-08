@@ -8,19 +8,22 @@ if (system.args.length === 1) {
 
 var url = 'https://www.google.fr/search?q='+system.args[1]+'&source=lnms&tbm=isch';
 
+console.log("This is the url");
+console.log(url);
 
 page.open(url, function (status) {
     var image_urls = new Array();
     
-
+    console.log("HERE 1");
     setTimeout(function () {
         page.evaluate(function() {
-        
+        console.log("HERE 2");
         var j=-1;
         var images = document.getElementsByTagName("a");
         console.log(images.length);
         // Scrapping the google result page in order to get the url of the images
         for(q = 0; q < images.length; q++){
+            console.log("HERE 2");
             if(images[q].href.indexOf("/imgres?imgurl=http")>0){
             image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
             }
