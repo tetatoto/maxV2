@@ -20,11 +20,12 @@ page.open(url, function (status) {
         page.evaluate(function() {
             console.log("HERE 3");
             var j=-1;
+            var image_urls = new Array();
             var images = document.getElementsByTagName("a");
             console.log(images.length);
             // Scrapping the google result page in order to get the url of the images
             for(q = 0; q < images.length; q++){
-                console.log("HERE 2");
+                console.log("HERE 4");
                 if(images[q].href.indexOf("/imgres?imgurl=http")>0) {
                     image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
                 }
