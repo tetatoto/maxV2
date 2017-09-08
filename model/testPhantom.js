@@ -11,40 +11,64 @@ var url = 'https://www.google.fr/search?q='+system.args[1]+'&source=lnms&tbm=isc
 console.log("This is the url");
 console.log(url);
 
-page.open(url, function (status) {
-    try {
-        if (status !== "success") {
-            console.log("Unable to access network");
-        } else {
-            var image_urls = new Array();
-    
-            console.log("HERE 1");
-            setTimeout(function () {
-                console.log("HERE 2");
-                var eval = page.evaluate(function() {
-                    console.log("HERE 3");
-                    var j=-1;
-                    var image_urls = new Array();
-                    var images = document.getElementsByTagName("a");
-                    console.log(images.length);
-                    // Scrapping the google result page in order to get the url of the images
-                    for(q = 0; q < images.length; q++){
-                        console.log("HERE 4");
-                        if(images[q].href.indexOf("/imgres?imgurl=http")>0) {
-                            image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
-                        }
-                    }
-                // page is redirecting.
-                });
-                console.log(eval);
-            }, 5000);
-        }        
-    } catch (ex) {
-        var fullMessage = "\nJAVASCRIPT EXCEPTION";
-        fullMessage += "\nMESSAGE: " + ex.toString();
-        for (var p in ex) {
-            fullMessage += "\n" + p.toUpperCase() + ": " + ex[p];
+
+
+page.onLoadFinished = function(){
+
+    var urls = page.evaluate(function(){
+        var image_urls = new Array;
+        var images = document.getElementsByTagName("a");
+        for(q = 0; q < images.length; q++){
+            image_urls.push(images[q].href);
         }
-        console.log(fullMessage);
-    }
-});
+        return image_urls;
+    });    
+
+    console.log(urls.length);
+    console.log(urls[0]);
+
+    phantom.exit();
+}
+
+page.open(url);
+
+
+
+// page.open(url, function (status) {
+//     try {
+//         if (status !== "success") {
+//             console.log("Unable to access network");
+//         } else {
+//             var image_urls = new Array();
+    
+//             console.log("HERE 1");
+//             setTimeout(function () {
+//                 console.log("HERE 2");
+//                 var eval = page.evaluate(function() {
+//                     console.log("HERE 3");
+//                     var j=-1;
+//                     var image_urls = new Array();
+//                     var images = document.getElementsByTagName("a");
+//                     console.log(images.length);
+//                     // Scrapping the google result page in order to get the url of the images
+//                     for(q = 0; q < images.length; q++){
+//                         console.log("HERE 4");
+//                         if(images[q].href.indexOf("/imgres?imgurl=http")>0) {
+//                             image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+//                         }
+//                     }
+//                     return image_urls;
+//                 // page is redirecting.
+//                 });
+//                 console.log(eval);
+//             }, 5000);
+//         }        
+//     } catch (ex) {
+//         var fullMessage = "\nJAVASCRIPT EXCEPTION";
+//         fullMessage += "\nMESSAGE: " + ex.toString();
+//         for (var p in ex) {
+//             fullMessage += "\n" + p.toUpperCase() + ": " + ex[p];
+//         }
+//         console.log(fullMessage);
+//     }
+// });
