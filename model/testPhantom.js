@@ -29,11 +29,6 @@ page.onLoadFinished = function(){
     });    
 
 
-    {"cid":"KecjEWTJ",
-    "purl":"http://starconnectmedia.wordpress.com/2013/01/10/oscars-to-celebrate-james-bond/",
-    "murl":"http://starconnectmedia.files.wordpress.com/2013/01/james-bond.jpg",
-    "turl":"https://tse1.mm.bing.net/th?id=OIP.KecjEWTJQkP2blVch17zywDUEs&pid=15.1",
-    "md5":"29e7231164c94243f66e555c875ef3cb"}
 
     console.log(urls.length);
     for (var i = 0; i < urls.length; i++) {
