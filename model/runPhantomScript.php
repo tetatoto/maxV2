@@ -15,7 +15,7 @@ function runPhantomScript($theme) {
     $pictureUrls = array();
 
     // I made several tries because sometimes the first script run is always failing
-    while ($nbTry < 100 && $currentSize < $wantedSize) {
+    while ($nbTry < 10 && $currentSize < $wantedSize) {
         // Here we run the phantomJS script (assuming phantom is correctly installed on the vps) and we store the logs in a variable
         $logScriptPhantom = shell_exec($runScriptCommand);
 
@@ -28,11 +28,11 @@ function runPhantomScript($theme) {
         $currentSize = $pictureUrlsSize;
 
         // FOR TESTING :
-        echo '<p>current size = '.$currentSize.'</p>';
-        echo '<p>nb try = '.$nbTry.'</p>';
-        echo '<p>logs are = <br>';
-        var_dump($logScriptPhantom);
-        echo '</p>';
+        // echo '<p>current size = '.$currentSize.'</p>';
+        // echo '<p>nb try = '.$nbTry.'</p>';
+        // echo '<p>logs are = <br>';
+        // var_dump($logScriptPhantom);
+        // echo '</p>';
         $nbTry++;
     }
 
@@ -44,7 +44,7 @@ function runPhantomScript($theme) {
 
 
 // FOR TESTING the function :
-$testResult = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
-var_dump( $testResult);
+// $testResult = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
+// var_dump( $testResult);
 
 
