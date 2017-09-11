@@ -11,6 +11,8 @@ function runPhantomScript($theme) {
     $currentSize = 0;
     $wantedSize = 25;
     $giving_auth1 = shell_exec("chmod 777 model/outputs/*");
+    // Cleaning the file containing the urls of the images
+    file_put_contents("model/file.txt", "");
 
     $pictureUrls = array();
 
