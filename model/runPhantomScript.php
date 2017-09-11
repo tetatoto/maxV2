@@ -5,7 +5,7 @@
 // We suppose that the variable $theme is already on the format of a query (james+bond+daniel+craig for example)
 
 function runPhantomScript($theme) {
-    $runScriptCommand = 'phantomjs phantomScript.js '.'"'.$theme.'" 2>&1 &';
+    $runScriptCommand = 'phantomjs model/phantomScript.js '.'"'.$theme.'" > model/file.txt';
 
     $nbTry = 0;
     $currentSize = 0;
@@ -18,9 +18,11 @@ function runPhantomScript($theme) {
     while ($nbTry < 10 && $currentSize < $wantedSize) {
         // Here we run the phantomJS script (assuming phantom is correctly installed on the vps) and we store the logs in a variable
         $logScriptPhantom = shell_exec($runScriptCommand);
+        sleep(2);
 
         // Then we parse the logs to get the url of the images and we store them in a variable
-        $pictureUrls = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $logScriptPhantom, -1, PREG_SPLIT_NO_EMPTY);
+        // $pictureUrls = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $logScriptPhantom, -1, PREG_SPLIT_NO_EMPTY);
+        $pictureUrls = file("model/file.txt", FILE_IGNORE_NEW_LINES);
 
         // the following variable contains the number of images found
         $pictureUrlsSize = count($pictureUrls);
@@ -30,8 +32,8 @@ function runPhantomScript($theme) {
         // FOR TESTING :
         // echo '<p>current size = '.$currentSize.'</p>';
         // echo '<p>nb try = '.$nbTry.'</p>';
-        echo '<p>logs are = <br>';
-        var_dump($logScriptPhantom);
+        echo '<p>urls are = <br>';
+        var_dump($pictureUrls);
         // echo '</p>';
         $nbTry++;
     }
