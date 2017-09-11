@@ -32,8 +32,8 @@ function runPhantomScript($theme) {
         // FOR TESTING :
         // echo '<p>current size = '.$currentSize.'</p>';
         // echo '<p>nb try = '.$nbTry.'</p>';
-        echo '<p>urls are = <br>';
-        var_dump($pictureUrls);
+        // echo '<p>urls are = <br>';
+        // var_dump($pictureUrls);
         // echo '</p>';
         $nbTry++;
     }
@@ -46,7 +46,7 @@ function runPhantomScript($theme) {
 
 
 // FOR TESTING the function :
-$testResult = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
-var_dump( $testResult);
+// $testResult = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
+// var_dump( $testResult);
 
 
