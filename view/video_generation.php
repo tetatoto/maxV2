@@ -115,8 +115,8 @@
 
                 <br><br>
 
-                <!--The choice of the subtitles-->
-                <label for="subtitlesChoice">Please choose if you want subtitles or not</label><br>
+                <!--The choice of the subtitles NOT WORKING YET-->
+                <!-- <label for="subtitlesChoice">Please choose if you want subtitles or not</label><br>
                 <div class="btn-group" data-toggle="buttons" id="subtitlesChoice">
                   <label class="btn btn-primary active">
                     <input type="radio" name="subtitles" id="option1" autocomplete="off" value="yes" checked> With Subtitles
@@ -124,7 +124,7 @@
                   <label class="btn btn-primary">
                     <input type="radio" name="subtitles" id="option2" autocomplete="off" value="no"> Without Subtitles
                   </label>
-                </div>
+                </div> -->
 
                 <br><br><br><br>
 

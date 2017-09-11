@@ -30,8 +30,8 @@ function runPhantomScript($theme) {
         // FOR TESTING :
         // echo '<p>current size = '.$currentSize.'</p>';
         // echo '<p>nb try = '.$nbTry.'</p>';
-        // echo '<p>logs are = <br>';
-        // var_dump($logScriptPhantom);
+        echo '<p>logs are = <br>';
+        var_dump($logScriptPhantom);
         // echo '</p>';
         $nbTry++;
     }
@@ -44,7 +44,7 @@ function runPhantomScript($theme) {
 
 
 // FOR TESTING the function :
-// $testResult = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
-// var_dump( $testResult);
+$testResult = runPhantomScript("++++++++++++Avignon+:+le+réseau+Orange+victime+d'une+coupure++++++++");
+var_dump( $testResult);
 
 
