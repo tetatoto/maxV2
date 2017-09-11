@@ -5,7 +5,7 @@
 // We suppose that the variable $theme is already on the format of a query (james+bond+daniel+craig for example)
 
 function runPhantomScript($theme) {
-    $runScriptCommand = 'phantomjs phantomScript.js '.'"'.$theme.'"';
+    $runScriptCommand = 'phantomjs phantomScript.js '.'"'.$theme.'" 2>&1 &';
 
     $nbTry = 0;
     $currentSize = 0;
