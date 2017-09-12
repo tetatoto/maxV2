@@ -2,6 +2,7 @@
 include("model/createSoundFile.php");
 include("model/runAddPicturesScript.php");
 require('vendor/autoload.php');
+include("model/addTitle.php");
 
 
 // First we retrieve the POST variables send by the video_generation page
@@ -57,6 +58,14 @@ else {
 
 // $gender = $_POST['gender']; 
 $subtitles = $_POST['subtitles']; // This will contain "yes" or "no"
+
+
+// The title of the video
+$title = "";
+if (isset($_POST['title'])) {
+    $title = $_POST['title']; 
+}
+
 // END
 
 
@@ -69,6 +78,20 @@ $runVideoCreationScript = shell_exec("/var/www/html/maxV2/model/videoCreationScr
 
 // RUn script that add the selected images to the video
 $runAddPicturesScript = runAddPicturesScript($selectedImages);
+
+$videoPath = "model/outputs/generated_video_final.mp4";
+$videoResultName= "final_with_title.mp4";
+
+// ADDING A TITLE
+if ($title != '') {
+    $runAddTitle = addTitle($videoPath, $videoResultName, $title);
+}
+
+
+// ADDING THE INTRO
+
+// ADDING ZOOM (NOT YET)
+
 
 // Displaying the view :
 include_once('view/video_result.php');

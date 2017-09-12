@@ -126,6 +126,12 @@
                   </label>
                 </div> -->
 
+                <label for="title">Please enter the title you want</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Ex : James bond is the new black" id="title" name="title">
+                </div><!-- /input-group -->
+
+
                 <br><br><br><br>
 
                 <h2>II. Select the script you want for your video</h2>

@@ -5,6 +5,7 @@
 // We suppose that the variable $theme is already on the format of a query (james+bond+daniel+craig for example)
 
 function runPhantomScript($theme) {
+    // The following command run the pahntom script and store the logs containing the urls in a file text named file.txt
     $runScriptCommand = 'phantomjs model/phantomScript.js '.'"'.$theme.'" > model/file.txt';
 
     $nbTry = 0;
