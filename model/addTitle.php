@@ -7,7 +7,7 @@ function addTitle($videoPath, $videoResultName, $title) {
     // $videoResultName is a String containing the name of the resulting video
     // $title is a String containing the title we want for the video
 
-    $commandLine = "ffmpeg -i ".$videoPath." -vf drawtext=\"fontfile=model/templates/arial.ttf: text=".$title.": fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5: boxborderw=5: x=630: y=350\" -codec:a copy model/outputs/".$videoResultName;
+    $commandLine = "ffmpeg -i ".$videoPath." -vf drawtext=\"fontfile=model/templates/arial.ttf: text=".$title.": fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5: boxborderw=5: x=10: y=310\" -codec:a copy model/outputs/".$videoResultName;
 
     // We run FFMPEG to add a title on the video 
     $concatenateLogs = shell_exec($commandLine);
