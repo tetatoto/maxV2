@@ -96,7 +96,7 @@ $videosToConcatenate = array();
 array_push($videosToConcatenate, "model/templates/video_intro.mp4");
 array_push($videosToConcatenate, "model/outputs/".$videoResultName);
 
-$videoResultName2 = "final_with_intro.mp4"
+$videoResultName2 = "final_with_intro.mp4";
 
 $concatenateLogs = concatenateVideos($videosToConcatenate, $videoResultName2);
 
