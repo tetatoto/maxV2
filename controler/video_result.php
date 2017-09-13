@@ -48,7 +48,7 @@ $logSound = createSoundFile($finalText);
 $gender = '';
 // BEGIN we retrieve the options : with / without subtitles and female / male
 if (isset($_POST['gender'])) {
-    $gender = $_POST['female']; // This will contain "female" 
+    $gender = $_POST['gender']; // This will contain "female" 
 } else {
     $gender = 'female'; // Default Option (as the voice is currently a feminine voice ...)
 }
