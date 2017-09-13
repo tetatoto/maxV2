@@ -83,8 +83,11 @@ $videoPath = "model/outputs/generated_video_final.mp4";
 $videoResultName= "final_with_title.mp4";
 
 // ADDING A TITLE
-if ($title != '') {
+if ($title != "") {
     $runAddTitle = addTitle($videoPath, $videoResultName, $title);
+}
+else {
+    shell_exec("cp ".$videoPath." model/outputs/".$videoResultName);
 }
 
 

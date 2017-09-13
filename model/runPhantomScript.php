@@ -6,14 +6,14 @@
 
 function runPhantomScript($theme) {
     // The following command run the pahntom script and store the logs containing the urls in a file text named file.txt
-    $runScriptCommand = 'phantomjs model/phantomScript.js '.'"'.$theme.'" > model/file.txt';
+    $runScriptCommand = 'phantomjs model/phantomScript.js '.'"'.$theme.'" > model/listUrls.txt';
 
     $nbTry = 0;
     $currentSize = 0;
     $wantedSize = 25;
     $giving_auth1 = shell_exec("chmod 777 model/outputs/*");
     // Cleaning the file containing the urls of the images
-    file_put_contents("model/file.txt", "");
+    file_put_contents("model/listUrls.txt", "");
 
     $pictureUrls = array();
 
@@ -25,7 +25,7 @@ function runPhantomScript($theme) {
 
         // Then we parse the logs to get the url of the images and we store them in a variable
         // $pictureUrls = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $logScriptPhantom, -1, PREG_SPLIT_NO_EMPTY);
-        $pictureUrls = file("model/file.txt", FILE_IGNORE_NEW_LINES);
+        $pictureUrls = file("model/listUrls.txt", FILE_IGNORE_NEW_LINES);
 
         // the following variable contains the number of images found
         $pictureUrlsSize = count($pictureUrls);

@@ -122,7 +122,7 @@
                 <!-- Final Video Displayed -->
                 <h2>Here is your video !</h2>
                 <video width="640" height="360" controls>
-                  <source src="model/outputs/generated_video_final.mp4" type="video/mp4">
+                  <source src="<?= "model/outputs/".$videoResultName ?>" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
 
