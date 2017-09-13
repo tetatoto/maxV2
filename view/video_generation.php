@@ -111,6 +111,9 @@
                   <label class="btn btn-primary">
                     <input type="radio" name="female" id="option2" autocomplete="off" value="female"> Female (Alice)
                   </label>
+                  <label class="btn btn-primary">
+                    <input type="radio" name="female2" id="option3" autocomplete="off" value="female2"> Female (Mary)
+                  </label>
                 </div>
 
                 <br><br>

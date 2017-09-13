@@ -7,10 +7,25 @@ echo "STARTING THE GENERATION OF THE FULL VIDEO"
 echo "_______________________________________________________________"
 echo "The duration of the video is $video_duration seconds "
 
+gender='woman'
+# knowing the argument fot the template : wowan or man (the default answer is female)
+if [ $1 = "female" ]
+then
+	gender='woman';
+elif [ $1 = "male" ]
+then
+	gender='man';
+elif [ $1 = "female2" ]
+then
+	gender='woman2';
+else
+	gender='woman';
+fi
 
 # FIRST STEP : creating a loop with the template video in order to reach the right duration (given in argument)
 
-let 'template_duration=13'
+template_duration="$(mediainfo --Inform="Video;%Duration%"  model/templates/template_${gender}.mp4)"
+# let 'template_duration=13'
 let 'current_duration=0'
 
 echo "The duration of the template is $template_duration seconds"
@@ -21,17 +36,7 @@ echo "_______________________________________________________________"
 
 # 1.1 // loop to get the full duration video
 
-gender='woman'
-# knowing the argument fot the template : wowan or man (the default answer is female)
-if [ $1 = "female" ]
-then
-	gender='woman';
-elif [ $1 = "male" ]
-then
-	gender='man';
-else
-	gender='woman';
-fi
+
 
 # Initiate the final video with the right duration looping the template
 
