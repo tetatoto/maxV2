@@ -96,7 +96,7 @@
                 <!-- FOR TESTING -->
 
                 <p>Nb POST variable Dump = <?php var_dump($_POST); ?></p>
-                
+                <p>Add Title Logs variable Dump = <?php var_dump($runAddTitle); ?></p>
 
                 <!-- <div class="col-lg-12">
                 <h2>  Result Video Creation </h2>

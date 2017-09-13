@@ -17,7 +17,7 @@ then
 	gender='man';
 elif [ $1 = "female2" ]
 then
-	gender='woman1';
+	gender='woman3';
 else
 	gender='woman';
 fi
