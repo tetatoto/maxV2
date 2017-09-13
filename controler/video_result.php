@@ -3,7 +3,7 @@ include("model/createSoundFile.php");
 include("model/runAddPicturesScript.php");
 require('vendor/autoload.php');
 include("model/addTitle.php");
-
+include("model/concatenateVideos.php");
 
 // First we retrieve the POST variables send by the video_generation page
 
@@ -92,8 +92,18 @@ else {
 
 
 // ADDING THE INTRO
+$videosToConcatenate = array();
+array_push($videosToConcatenate, "video_intro.mp4");
+array_push($videosToConcatenate, "model/outputs/".$videoResultName);
+
+$videoResultName2 = "final_with_intro.mp4"
+
+$concatenateLogs = concatenateVideos($videosToConcatenate, $videoResultName2);
 
 // ADDING ZOOM (NOT YET)
+
+// depending on the preocess :
+$finalVideoName = $videoResultName2;
 
 
 // Displaying the view :

@@ -19,5 +19,7 @@ function concatenateVideos($videos, $videoResultName) {
     // We run FFMPEG to concatenate the videos listed in the file
     $concatenateLogs = shell_exec("ffmpeg -f concat -i model/videosToConcatenate.txt -c copy model/outputs/".$videoResultName);
 
+    return $concatenateLogs;
+
 }
 
