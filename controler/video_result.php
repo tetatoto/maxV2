@@ -44,17 +44,12 @@ $nbSelectedImages = count($selectedImages);
 // Here we create the sound File from the final text
 $logSound = createSoundFile($finalText);
 
+
+$gender = '';
 // BEGIN we retrieve the options : with / without subtitles and female / male
-if (isset($_POST['female'])) {
+if (isset($_POST['gender'])) {
     $gender = $_POST['female']; // This will contain "female" 
-}
-elseif (isset($_POST['male'])) {
-    $gender = $_POST['male']; // This will contain "male"
-}
-elseif (isset($_POST['female2'])) {
-    $gender = $_POST['female2']; // This will contain "female2"
-}
-else {
+} else {
     $gender = 'female'; // Default Option (as the voice is currently a feminine voice ...)
 }
 
