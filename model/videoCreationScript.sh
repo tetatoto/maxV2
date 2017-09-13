@@ -17,7 +17,7 @@ then
 	gender='man';
 elif [ $1 = "female2" ]
 then
-	gender='woman2';
+	gender='woman1';
 else
 	gender='woman';
 fi
@@ -25,7 +25,7 @@ fi
 # FIRST STEP : creating a loop with the template video in order to reach the right duration (given in argument)
 
 template_duration="$(mediainfo --Inform="Video;%Duration%"  model/templates/template_${gender}.mp4)"
-# let 'template_duration=13'
+let 'template_duration=template_duration/1000' # because the result is on ms and we want seconds
 let 'current_duration=0'
 
 echo "The duration of the template is $template_duration seconds"
