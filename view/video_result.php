@@ -95,7 +95,7 @@
 
                 <!-- FOR TESTING -->
 
-                <!--<p>Nb POST variable Dump = <?php //var_dump($_POST); ?></p>-->
+                <p>Nb POST variable Dump = <?php var_dump($_POST); ?></p>
                 
 
                 <!-- <div class="col-lg-12">
