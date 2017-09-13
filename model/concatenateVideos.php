@@ -23,3 +23,7 @@ function concatenateVideos($videos, $videoResultName) {
 
 }
 
+
+// CAREFUL : THE VIDEO SHOULD HAVE THE SAME AUDIO AND VIDEO CODEC (sometimes the sound disappear because the audio codec aren't the same')
+// To change audio codec to mp3 on an mp4 video: ffmpeg -i withoutmp3.mp4 -acodec mp3 -vcodec copy withmp3codec.mp4
+
