@@ -7,7 +7,7 @@ function addTitle($videoPath, $videoResultName, $title) {
     // $videoResultName is a String containing the name of the resulting video
     // $title is a String containing the title we want for the video
 
-    $commandLine = "ffmpeg -i ".$videoPath." -vf drawtext=\"fontfile=model/templates/arial.ttf: text=".$title.": fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5: boxborderw=5: x=(w-text_w)/2: y=(h-text_h)/2\" -codec:a copy model/outputs/".$videoResultName;
+    $commandLine = "ffmpeg -i ".$videoPath." -vf drawtext=\"fontfile=model/templates/arial.ttf: text=".$title.": fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5: boxborderw=5: x=630: y=350\" -codec:a copy model/outputs/".$videoResultName;
 
     // We run FFMPEG to add a title on the video 
     $concatenateLogs = shell_exec($commandLine);
@@ -34,3 +34,7 @@ function addTitle($videoPath, $videoResultName, $title) {
 //     This filter requires your ffmpeg to be compiled with --enable-libfreetype. If you get No such filter: 'drawtext' it is probably missing --enable-libfreetype. Most of the ffmpeg static builds available support this, so see the FFmpeg Download page for links.
 
 //     See the drawtext filter documentation for more options and examples.
+
+
+
+// x=(w-text_w)/2: y=(h-text_h)/2\
