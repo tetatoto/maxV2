@@ -16,7 +16,7 @@ page.settings.userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.3
 
 page.onLoadFinished = function(status) {
     var urls = new Array();
-    if (status = 'success') {
+    if (status == 'success') {
         urls  = page.evaluate(function(src_file2){
             var image_urls = new Array();
             var j=-1;
