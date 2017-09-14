@@ -14,20 +14,37 @@ if (system.args.length === 1) {
 }
 page.settings.userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36";
 
-page.onLoadFinished = function() {
-    //console.log(document.getElementsByTagName("a").length);
-    var urls  = page.evaluate(function(src_file2){
-        var image_urls = new Array();
-        var j=-1;
-        var images = document.getElementsByTagName("a");
-        // Scrapping the google result page in order to get the url of the images
-        for(q = 0; q < images.length; q++){
-            if(images[q].href.indexOf("/imgres?imgurl=http")>0){
-            image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+page.onLoadFinished = function(status) {
+    var urls = new Array();
+    if (status = 'success') {
+        urls  = page.evaluate(function(src_file2){
+            var image_urls = new Array();
+            var j=-1;
+            var images = document.getElementsByTagName("a");
+            // Scrapping the google result page in order to get the url of the images
+            for(q = 0; q < images.length; q++){
+                if(images[q].href.indexOf("/imgres?imgurl=http")>0){
+                image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                }
             }
-        }
-        return image_urls;
-    });
+            return image_urls;
+        });
+    } else {
+        console.log("status failed :" + status);
+    }
+    //console.log(document.getElementsByTagName("a").length);
+    // var urls  = page.evaluate(function(src_file2){
+    //     var image_urls = new Array();
+    //     var j=-1;
+    //     var images = document.getElementsByTagName("a");
+    //     // Scrapping the google result page in order to get the url of the images
+    //     for(q = 0; q < images.length; q++){
+    //         if(images[q].href.indexOf("/imgres?imgurl=http")>0){
+    //         image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+    //         }
+    //     }
+    //     return image_urls;
+    // });
     //page.render('img.png');
 
     // console.log(urls.length);
@@ -36,6 +53,7 @@ page.onLoadFinished = function() {
 
     // Erase the content of the urls_images.txt file
     // fs.remove(path);
+    console.log(status);
     // Wrtting in the text file all the urls found by the script
     console.log(urls[0]);
     // fs.write(path, urls[0], '+');
