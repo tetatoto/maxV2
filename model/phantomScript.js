@@ -29,20 +29,25 @@ page.onLoadFinished = function(status) {
             nbTry++;
             console.log("nb try : " + nbTry);
         }
-        setTimeout(function() {
-                console.log("waiting 1 second");
-        }, 1000)
-        urls  = page.evaluate(function(src_file2){
-            var image_urls = new Array();
-            var j=-1;
-            var images = document.getElementsByTagName("a");
-            // Scrapping the google result page in order to get the url of the images
-            for(q = 0; q < images.length; q++){
-                if(images[q].href.indexOf("/imgres?imgurl=http")>0){
-                image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
-                }
-            }
-            return image_urls;
+        
+        urls  = page.evaluate(function(){
+            setTimeout(function() {
+                page.evaluate(function() {
+                    var image_urls = new Array();
+                    var j=-1;
+                    var images = document.getElementsByTagName("a");
+                    // Scrapping the google result page in order to get the url of the images
+                    for(q = 0; q < images.length; q++){
+                        if(images[q].href.indexOf("/imgres?imgurl=http")>0){
+                        image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                        }
+                    }
+                    return image_urls;
+                }, function(image_urls) {
+                    return image_urls;
+                })
+            }, 2000);
+            
         });
     } else {
         console.log("status failed :" + status);
