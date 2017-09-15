@@ -17,6 +17,13 @@ page.settings.userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.3
 page.onLoadFinished = function(status) {
     var urls = new Array();
     if (status == 'success') {
+        var nbTry = 0;
+        while (document.readyState !== 'complete' && nbTry < 5) {
+            setTimeout(function() {
+                console.log("waiting 1 second");
+            }, 1000)
+            nbTry++;
+        }
         urls  = page.evaluate(function(src_file2){
             var image_urls = new Array();
             var j=-1;
@@ -53,7 +60,7 @@ page.onLoadFinished = function(status) {
 
     // Erase the content of the urls_images.txt file
     // fs.remove(path);
-    console.log(status);
+    // console.log(status);
     // Wrtting in the text file all the urls found by the script
     console.log(urls[0]);
     // fs.write(path, urls[0], '+');
