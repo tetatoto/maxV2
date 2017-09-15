@@ -31,6 +31,8 @@ page.onLoadFinished = function(status) {
         }
         
         urls  = page.evaluate(function(){
+            console.log("first step : do nothing");
+        }, function() {
             setTimeout(function() {
                 page.evaluate(function() {
                     var image_urls = new Array();
