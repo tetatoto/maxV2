@@ -21,19 +21,16 @@ page.onLoadFinished = function(status) {
         console.log("status success : " + status);
         console.log("document ready state : " + document.readyState);
         console.log("windows onload : " + window.onload);
-        while ((document.readyState != 'complete') && (nbTry < 5)) {
-            setTimeout(function() {
-                console.log("in the while");
-                console.log("waiting 1 second");
-            }, 1000)
-            nbTry++;
-            console.log("nb try : " + nbTry);
-        }
+        // while ((document.readyState != 'complete') && (nbTry < 5)) {
+        //     setTimeout(function() {
+        //         console.log("in the while");
+        //         console.log("waiting 1 second");
+        //     }, 1000)
+        //     nbTry++;
+        //     console.log("nb try : " + nbTry);
+        // }
         
-        urls  = page.evaluate(function(){
-            console.log("first step : do nothing");
-        }, function() {
-            setTimeout(function() {
+        urls  = setTimeout(function() {
                 page.evaluate(function() {
                     var image_urls = new Array();
                     var j=-1;
@@ -48,9 +45,9 @@ page.onLoadFinished = function(status) {
                 }, function(image_urls) {
                     return image_urls;
                 })
-            }, 2000);
+        }, 2000);
             
-        });
+
     } else {
         console.log("status failed :" + status);
     }
