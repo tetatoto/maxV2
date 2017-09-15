@@ -20,13 +20,18 @@ page.onLoadFinished = function(status) {
         var nbTry = 0;
         console.log("status success : " + status);
         console.log("document ready state : " + document.readyState);
+        console.log("windows onload : " + window.onload);
         while ((document.readyState != 'complete') && (nbTry < 5)) {
             setTimeout(function() {
+                console.log("in the while");
                 console.log("waiting 1 second");
             }, 1000)
             nbTry++;
             console.log("nb try : " + nbTry);
         }
+        setTimeout(function() {
+                console.log("waiting 1 second");
+        }, 1000)
         urls  = page.evaluate(function(src_file2){
             var image_urls = new Array();
             var j=-1;
