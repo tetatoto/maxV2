@@ -19,7 +19,8 @@ page.onLoadFinished = function(status) {
     if (status == 'success') {
         var nbTry = 0;
         console.log("status success : " + status);
-        while (document.readyState !== 'complete' && nbTry < 5) {
+        console.log("document ready state : " + document.readyState);
+        while ((document.readyState != 'complete') && (nbTry < 5)) {
             setTimeout(function() {
                 console.log("waiting 1 second");
             }, 1000)
