@@ -18,11 +18,13 @@ page.onLoadFinished = function(status) {
     var urls = new Array();
     if (status == 'success') {
         var nbTry = 0;
+        console.log("status success : " + status);
         while (document.readyState !== 'complete' && nbTry < 5) {
             setTimeout(function() {
                 console.log("waiting 1 second");
             }, 1000)
             nbTry++;
+            console.log("nb try : " + nbTry);
         }
         urls  = page.evaluate(function(src_file2){
             var image_urls = new Array();
