@@ -35,23 +35,28 @@ page.onLoadFinished = function(status) {
             var j=-1;
             var images = document.getElementsByTagName("a");
             setTimeout(function() {
-                console.log("Entering the timeout");
+                console.log("Entering the timeout 1");
                 for(q = 0; q < images.length; q++){
                     if(images[q].href.indexOf("/imgres?imgurl=http")>0){
                     image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
                     }
                 }
-            }, 5000);
+            }, 3000);
             
             // Scrapping the google result page in order to get the url of the images
+            setTimeout(function() {
+                console.log("Entering the timeout 2");
+                return image_urls;
+            }, 4000);
             
-            return image_urls;
         });
-
-        console.log(urls[0]);
-        for(k = 1; k < urls.length; k++) {
-            console.log(urls[k]);
-        }
+        setTimeout(function() {
+                console.log(urls[0]);
+                for(k = 1; k < urls.length; k++) {
+                    console.log(urls[k]);
+                }
+        }, 6000);
+        
 
 
     } else {
