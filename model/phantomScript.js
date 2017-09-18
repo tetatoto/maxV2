@@ -37,25 +37,24 @@ page.onLoadFinished = function(status) {
             setTimeout(function() {
                 console.log("Entering the timeout 1");
                 for(q = 0; q < images.length; q++){
+                    console.log("image added");
                     if(images[q].href.indexOf("/imgres?imgurl=http")>0){
                     image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
                     }
                 }
+                return image_urls;
             }, 3000);
             
             // Scrapping the google result page in order to get the url of the images
-            setTimeout(function() {
-                console.log("Entering the timeout 2");
-                return image_urls;
-            }, 4000);
-            
+
         });
         setTimeout(function() {
+                console.log("After page.evaluate ");
                 console.log(urls[0]);
                 for(k = 1; k < urls.length; k++) {
                     console.log(urls[k]);
                 }
-        }, 6000);
+        }, 5000);
         
 
 
