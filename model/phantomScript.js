@@ -48,8 +48,6 @@ page.onLoadFinished = function(status) {
                         }
                     }
                     return image_urls;
-                }, function(image_urls) {
-                    return image_urls;
                 })
         }, 2000);
             
