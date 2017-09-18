@@ -23,8 +23,8 @@
 video_duration="$(mp3info -p "%S\n" model/outputs/soundFile.mp3)"
 
 let 'current_timeline=0'
-let 'limit=video_duration-20'
-let 'next=20'
+let 'limit=video_duration-10'
+let 'next=10'
 let 'cursor=2'
 let 'nextCursor=3'
 
@@ -37,8 +37,8 @@ do
     if [ $current_timeline -lt $limit ]
     then
         ffmpeg -y -i "model/outputs/generated_video_step${cursor}.mp4" -i "$picturePath" -filter_complex "[0:v][1:v] overlay=640-330-0:0:enable='between(t,${current_timeline},${next})'" -pix_fmt yuv420p -c:a copy "model/outputs/generated_video_step${nextCursor}.mp4";
-        ((current_timeline=current_timeline+20));
-        ((next=next+20));
+        ((current_timeline=current_timeline+10));
+        ((next=next+10));
         ((cursor=cursor+1));
         ((nextCursor=nextCursor+1));
     fi
