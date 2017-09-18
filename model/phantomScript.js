@@ -7,8 +7,8 @@ var page = webPage.create();
 
 var system = require('system');
 
-var fs = require('fs');
-var path = 'urlsPhantom.txt';
+// var fs = require('fs');
+// var path = 'urlsPhantom.txt';
 
 if (system.args.length === 1) {
   console.log('Usage: script.js <some subject query>');
@@ -21,7 +21,7 @@ page.onConsoleMessage = function(msg, lineNum, sourceId) {
 };
 
 page.onLoadFinished = function(status) {
-    var urls = new Array();
+    // var urls = new Array();
     if (status === 'success') {
 
         // console.log("ONLOAD success : " + status);
@@ -31,8 +31,8 @@ page.onLoadFinished = function(status) {
 
         urls = page.evaluate(function() {
             // console.log("Entering the page.evaluate ");
-            var image_urls = new Array();
-            var j=-1;
+            // var image_urls = new Array();
+            // var j=-1;
             var images = document.getElementsByTagName("a");
             setTimeout(function() {
                 // console.log("Entering the timeout 1");
@@ -40,12 +40,12 @@ page.onLoadFinished = function(status) {
                     // console.log("image added");
                     if(images[q].href.indexOf("/imgres?imgurl=http")>0){
                         var final_url = decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
-                        image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                        // image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
                         console.log(final_url);
                     }
                 }
-                return image_urls;
-            }, 3000);
+                // return image_urls;
+            }, 2000);
             
             // Scrapping the google result page in order to get the url of the images
 
@@ -74,7 +74,7 @@ page.onLoadFinished = function(status) {
     // fs.write(path, urls[k], '+');
     setTimeout(function() {
         phantom.exit();
-    }, 7000);
+    }, 3000);
     
 }
 
