@@ -7,7 +7,7 @@ var page = webPage.create();
 
 var system = require('system');
 
-// var fs = require('fs');
+var fs = require('fs');
 // var path = 'urlsPhantom.txt';
 
 if (system.args.length === 1) {

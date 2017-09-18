@@ -21,7 +21,7 @@ function runPhantomScript($theme) {
     while ($nbTry < 10 && $currentSize < $wantedSize) {
         // Here we run the phantomJS script (assuming phantom is correctly installed on the vps) and we store the logs in a variable
         $logScriptPhantom = shell_exec($runScriptCommand);
-        sleep(2);
+        // sleep(2);
 
         // Then we parse the logs to get the url of the images and we store them in a variable
         // $pictureUrls = preg_split("/[^\w]*([\s]+[^\w]*|$)/", $logScriptPhantom, -1, PREG_SPLIT_NO_EMPTY);
