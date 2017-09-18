@@ -39,7 +39,9 @@ page.onLoadFinished = function(status) {
                 for(q = 0; q < images.length; q++){
                     console.log("image added");
                     if(images[q].href.indexOf("/imgres?imgurl=http")>0){
-                    image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                        var final_url = decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                        image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                        console.log(final_url);
                     }
                 }
                 return image_urls;
