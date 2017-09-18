@@ -71,8 +71,10 @@ page.onLoadFinished = function(status) {
     // fs.write(path, urls[0], '+');
     // fs.write(path, '\n', '+');
     // fs.write(path, urls[k], '+');
+    setTimeout(function() {
+        phantom.exit();
+    }, 7000);
     
-    phantom.exit();
 }
 
 // Run the script
