@@ -33,18 +33,18 @@ page.onLoadFinished = function(status) {
             console.log("Entering the page.evaluate ");
             var image_urls = new Array();
             var j=-1;
-            var images;
+            var images = document.getElementsByTagName("a");
             setTimeout(function() {
                 console.log("Entering the timeout");
-                images = document.getElementsByTagName("a");
+                for(q = 0; q < images.length; q++){
+                    if(images[q].href.indexOf("/imgres?imgurl=http")>0){
+                    image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+                    }
+                }
             }, 5000);
             
             // Scrapping the google result page in order to get the url of the images
-            for(q = 0; q < images.length; q++){
-                if(images[q].href.indexOf("/imgres?imgurl=http")>0){
-                image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
-                }
-            }
+            
             return image_urls;
         });
 
