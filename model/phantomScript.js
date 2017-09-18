@@ -25,18 +25,30 @@ page.onLoadFinished = function(status) {
         console.log("ONLOAD success : " + status);
         console.log("document ready state : " + document.readyState);
         console.log("windows onload : " + window.onload);
-        // while ((document.readyState != 'complete') && (nbTry < 5)) {
-        //     setTimeout(function() {
-        //         console.log("in the while");
-        //         console.log("waiting 1 second");
-        //     }, 1000)
-        //     nbTry++;
-        //     console.log("nb try : " + nbTry);
-        // }
         
-        setTimeout(function() {
-                console.log("Entering the timeout ");
-                urls = page.evaluate(function() {
+        // setTimeout(function() {
+        //         console.log("Entering the timeout ");
+        //         urls = page.evaluate(function() {
+        //             console.log("Entering the page.evaluate ");
+        //             var image_urls = new Array();
+        //             var j=-1;
+        //             var images = document.getElementsByTagName("a");
+        //             // Scrapping the google result page in order to get the url of the images
+        //             for(q = 0; q < images.length; q++){
+        //                 if(images[q].href.indexOf("/imgres?imgurl=http")>0){
+        //                 image_urls[++j]=decodeURIComponent(images[q].href).split(/=|%|&/)[1].split("?imgref")[0];
+        //                 }
+        //             }
+        //             return image_urls;
+        //         })
+        // }, 2000);
+            
+        
+        page.evaluate(function() {
+            element.dispatchEvent( event );
+        }, function() {
+            setTimeout(function() {
+                page.evaluate(function() {    
                     console.log("Entering the page.evaluate ");
                     var image_urls = new Array();
                     var j=-1;
@@ -48,9 +60,11 @@ page.onLoadFinished = function(status) {
                         }
                     }
                     return image_urls;
+                }, function(image_urls) {
+                    urls = image_urls;
                 })
-        }, 2000);
-            
+            }, 5000)
+        });
 
     } else {
         console.log("ONLOAD failed :" + status);
