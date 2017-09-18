@@ -2,6 +2,14 @@
 
 require('vendor/autoload.php');
 
+$videoNameToUpload = "";
+if (isset($_GET['title'])) {
+    $videoNameToUpload = $_GET['title'];
+}
+else {
+    $videoNameToUpload = "generated_video_final.mp4";
+}
+
 // The variable $access will contain a boolean indicating if the user is logged into its Google account or not.
 // It will depend on thepresence of the access token which is created by logging into a google account in the url created by the function $client->createAuthUrl();
 // Once you are logged in, it will redirect you to the "redirectUrl" you choose when setting the $client->setRedirectUri() AND in you google developer Oauth Console.
@@ -62,7 +70,7 @@ if ($client->getAccessToken()) {
     $request = $youtube->videos->insert("status,snippet", $video);
 
     // $file = dirname(__DIR__).'video.mp4';
-    $filePath = '/var/www/html/maxV2/model/outputs/generated_video_final.mp4';
+    $filePath = '/var/www/html/maxV2/model/outputs/'.$videoNameToUpload;
 
     // The way we use to upload the media is chunk by chunk (it is the only working way I found)
     $chunkSizeBytes = 1 * 1024 * 1024;

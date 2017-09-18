@@ -101,8 +101,8 @@ $concatenateLogs = concatenateVideos($videosToConcatenate, $videoResultName2);
 
 // ADDING ZOOM (NOT YET)
 
-// depending on the preocess :
-$finalVideoName = $videoResultName;
+// depending on the process :
+$finalVideoName = $videoResultName2;
 
 
 // Displaying the view :
