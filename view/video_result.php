@@ -133,54 +133,57 @@
                   <label for="privacyChoice">Please choose the gender of your presentator</label><br>
                   <div class="btn-group" data-toggle="buttons" id="privacyChoice">
                     <label class="btn btn-primary">
-                      <input type="radio" name="privacy" id="option1" autocomplete="off" value="private" checked> PRIVATE
+                      <input type="radio" name="youtubePrivacy" id="option1" autocomplete="off" value="private" checked> PRIVATE
                     </label>
                     <label class="btn btn-primary">
-                      <input type="radio" name="privacy" id="option2" autocomplete="off" value="public"> PUBLIC
+                      <input type="radio" name="youtubePrivacy" id="option2" autocomplete="off" value="public"> PUBLIC
                     </label>
                   </div>
+
+                  <br><br><br>
 
                   <label for="youtubeTitle">Please enter the title you want</label>
                   <div class="input-group">
                     <input type="text" class="form-control" placeholder="Ex : James bond is the new black" id="youtubeTitle" name="youtubeTitle">
                   </div>
 
-                  <select name="cars">
-                    <option value="2">Cars and Vehicles</option>
-                    <option value="23">Comedy</option>
-                    <option value="27">Education</option>
-                    <option value="24">Entertainment</option>
-                    <option value="1">Film and Animation</option>
-                    <option value="20">Gaming</option>
-                    <option value="24">How-to and Style</option>
-                    <option value="24">Music</option>
-                    <option value="24">News and politics</option>
-                    <option value="24">Non-profits and Activism</option>
-                    <option value="24">People and blogs</option>
-                    <option value="24">Pets and animals</option>
-                    <option value="24">Science and technology</option>
-                    <option value="24">Sport</option>
-                    <option value="24">travel and events</option>
-                  </select>
+                  <br><br><br>
 
-                  descreiption, categoryid,
-                    2 - Cars & Vehicles
-    23 - Comedy
-    27 - Education
-    24 - Entertainment
-    1 - Film & Animation
-    20 - Gaming
-    26 - How-to & Style
-    10 - Music
-    25 - News & Politics
-    29 - Non-profits & Activism
-    22 - People & Blogs
-    15 - Pets & Animals
-    28 - Science & Technology
-    17 - Sport
-    19 - Travel & Events
+                  <label for="category">Please select a category</label>
+                  <div class="input-group">
+                    <select name="youtubeCategoryId" id="category">
+                      <option value="2">Cars and Vehicles</option>
+                      <option value="23">Comedy</option>
+                      <option value="27">Education</option>
+                      <option value="24">Entertainment</option>
+                      <option value="1">Film and Animation</option>
+                      <option value="20">Gaming</option>
+                      <option value="24">How-to and Style</option>
+                      <option value="10">Music</option>
+                      <option value="25">News and politics</option>
+                      <option value="29">Non-profits and Activism</option>
+                      <option value="22">People and blogs</option>
+                      <option value="15">Pets and animals</option>
+                      <option value="28">Science and technology</option>
+                      <option value="17">Sport</option>
+                      <option value="19">travel and events</option>
+                    </select>
+                  </div>
 
-                  <a href=<?= "index.php?section=video_upload&title=".$finalVideoName ?> ><button type="submit" class="btn btn-primary btn-lg btn-block" >Upload the video on YouTube </button></a>
+                  <br><br><br>
+
+                  <label for="description">Please write a short description</label>
+                  <div class="input-group">
+                    <textarea name="youtubeDescription" id="description" rows="5" cols="50" >
+                      Write a short description here.
+                    </textarea>
+                  </div>
+
+                  <br><br><br>
+
+                  <input type="submit" class="btn btn-primary btn-lg btn-block" >Upload the video on YouTube </input>
+
+                  <br><br><br>
                 </form>
                 <!-- <h2>  Result Video Creation </h2> -->
                 <p> <?php //var_dump($runAddPicturesScript); ?></p>

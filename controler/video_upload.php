@@ -6,17 +6,17 @@ session_start();
 
 
 
-if (isset($_GET['youtubeDescription'])) {
-    $_SESSION['youtubeDescription'] = $_GET['youtubeDescription'];
+if (isset($_POST['youtubeDescription'])) {
+    $_SESSION['youtubeDescription'] = $_POST['youtubeDescription'];
 }
-if (isset($_GET['youtubePrivacy'])) {
-    $_SESSION['youtubePrivacy'] = $_GET['youtubePrivacy'];
+if (isset($_POST['youtubePrivacy'])) {
+    $_SESSION['youtubePrivacy'] = $_POST['youtubePrivacy'];
 }
-if (isset($_GET['youtubeTitle'])) {
-    $_SESSION['youtubeTitle'] = $_GET['youtubeTitle'];
+if (isset($_POST['youtubeTitle'])) {
+    $_SESSION['youtubeTitle'] = $_POST['youtubeTitle'];
 }
-if (isset($_GET['youtubeCategoryId'])) {
-    $_SESSION['youtubeCategoryId'] = (int)$_GET['youtubeCategoryId'];
+if (isset($_POST['youtubeCategoryId'])) {
+    $_SESSION['youtubeCategoryId'] = (int)$_POST['youtubeCategoryId'];
 }
 
 // The variable $access will contain a boolean indicating if the user is logged into its Google account or not.
@@ -77,6 +77,9 @@ if ($client->getAccessToken()) {
     $client->setDefer(true);
 
     $request = $youtube->videos->insert("status,snippet", $video);
+
+
+
 
     // $file = dirname(__DIR__).'video.mp4';
     $filePath = '/var/www/html/maxV2/model/outputs/'.$_SESSION['videoNameToUpload'];
