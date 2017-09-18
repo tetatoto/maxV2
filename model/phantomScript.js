@@ -5,7 +5,7 @@
 var page = require('webpage').create(),
   system = require('system'),
   t, address;
-var fs = require('fs');
+// var fs = require('fs');
 // var path = 'outputs/urls_images.txt';
 
 if (system.args.length === 1) {
@@ -14,11 +14,15 @@ if (system.args.length === 1) {
 }
 page.settings.userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36";
 
+page.onConsoleMessage = function(msg){
+    console.log("MSG : " + msg);
+};
+
 page.onLoadFinished = function(status) {
     var urls = new Array();
     if (status == 'success') {
         var nbTry = 0;
-        console.log("status success : " + status);
+        console.log("ONLOAD success : " + status);
         console.log("document ready state : " + document.readyState);
         console.log("windows onload : " + window.onload);
         // while ((document.readyState != 'complete') && (nbTry < 5)) {
@@ -30,8 +34,10 @@ page.onLoadFinished = function(status) {
         //     console.log("nb try : " + nbTry);
         // }
         
-        urls  = setTimeout(function() {
-                page.evaluate(function() {
+        setTimeout(function() {
+                console.log("Entering the timeout ");
+                urls = page.evaluate(function() {
+                    console.log("Entering the page.evaluate ");
                     var image_urls = new Array();
                     var j=-1;
                     var images = document.getElementsByTagName("a");
@@ -49,7 +55,7 @@ page.onLoadFinished = function(status) {
             
 
     } else {
-        console.log("status failed :" + status);
+        console.log("ONLOAD failed :" + status);
     }
     //console.log(document.getElementsByTagName("a").length);
     // var urls  = page.evaluate(function(src_file2){
@@ -84,4 +90,12 @@ page.onLoadFinished = function(status) {
     phantom.exit();
 }
 // Run the script
-page.open('https://www.google.fr/search?q='+system.args[1]+'&source=lnms&tbm=isch', fs);
+page.open('https://www.google.fr/search?q='+system.args[1]+'&source=lnms&tbm=isch', function(status) {
+    if (status == "success") {
+        console.log("OPEN SUCCESS : " + status);
+    }
+    else {
+        console.log("OPEN FAILED : " + status);
+        phantom.exit();
+    }
+});
