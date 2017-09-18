@@ -91,18 +91,22 @@ else {
 
 
 // ADDING THE INTRO
-$videosToConcatenate = array();
-array_push($videosToConcatenate, "file 'templates/intro_resized_resounded.mp4'");
-array_push($videosToConcatenate, "file 'outputs/".$videoResultName."'");
+// $videosToConcatenate = array();
+// array_push($videosToConcatenate, "file 'templates/intro_resized_resounded.mp4'");
+// array_push($videosToConcatenate, "file 'outputs/".$videoResultName."'");
 
-$videoResultName2 = "final_with_intro.mp4";
+// $videoResultName2 = "final_with_intro.mp4";
 
-$concatenateLogs = concatenateVideos($videosToConcatenate, $videoResultName2);
+// $concatenateLogs = concatenateVideos($videosToConcatenate, $videoResultName2);
 
 // ADDING ZOOM (NOT YET)
 
 // depending on the process :
-$finalVideoName = $videoResultName2;
+$finalVideoName = $videoResultName;
+
+session_start();
+
+$_SESSION['videoNameToUpload'] = $finalVideoName;
 
 
 // Displaying the view :

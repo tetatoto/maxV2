@@ -153,6 +153,7 @@
                     <ul class="list-group">
                     <?php
                     $cursor=0;
+                    $totalWords = 0;
                     foreach ($paragraphs as $paragraph) {
                       // We don't display the strings with less than 5 characters
                       if ($paragraph['size'] > 5) {
@@ -160,6 +161,7 @@
                         $cursor++;
                         // We make the difference between the small and the big strings
                         if ($paragraph['size'] > 35) {
+                          $totalWords = $totalWords + $paragraph['size'];
                           ?>
                           <li class="list-group-item list-group-item-success row">
                             <div class="col-lg-1">
@@ -209,6 +211,11 @@
                     }
                     ?>
                     </ul>
+                </div>
+                <div class="col-lg-12">
+                  <span class="badge">
+                    TOTAL : <?php echo htmlspecialchars($totalWords) ?> words pre-selected
+                  </span>
                 </div>
 
                 <br><br><br><br>
