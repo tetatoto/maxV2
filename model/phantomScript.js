@@ -33,7 +33,12 @@ page.onLoadFinished = function(status) {
             console.log("Entering the page.evaluate ");
             var image_urls = new Array();
             var j=-1;
-            var images = document.getElementsByTagName("a");
+            var images;
+            setTimeout(function() {
+                console.log("Entering the timeout");
+                images = document.getElementsByTagName("a");
+            }, 5000);
+            
             // Scrapping the google result page in order to get the url of the images
             for(q = 0; q < images.length; q++){
                 if(images[q].href.indexOf("/imgres?imgurl=http")>0){
