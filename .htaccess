@@ -1,0 +1,6 @@
+DirectoryIndex index.php
+
+AuthName "Max Brain"
+        AuthType Basic
+        AuthUserFile /home/username/.htpasswds
+        Require valid-user 
