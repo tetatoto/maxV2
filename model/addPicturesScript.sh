@@ -36,7 +36,7 @@ do
     echo "$picturePath";
     if [ $current_timeline -lt $limit ]
     then
-        ffmpeg -y -i "model/outputs/generated_video_step${cursor}.mp4" -i "$picturePath" -filter_complex "[0:v][1:v] overlay=640-330-0:0:enable='between(t,${current_timeline},${next})'" libx264 -preset ultrafast -pix_fmt yuv420p -c:a copy "model/outputs/generated_video_step${nextCursor}.mp4";
+        ffmpeg -y -i "model/outputs/generated_video_step${cursor}.mp4" -i "$picturePath" -preset ultrafast -filter_complex "[0:v][1:v] overlay=640-330-0:0:enable='between(t,${current_timeline},${next})'" -pix_fmt yuv420p -c:a copy "model/outputs/generated_video_step${nextCursor}.mp4";
         ((current_timeline=current_timeline+10));
         ((next=next+10));
         ((cursor=cursor+1));

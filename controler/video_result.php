@@ -81,13 +81,13 @@ $videoPath = "model/outputs/generated_video_final.mp4";
 $videoResultName= "final_with_title.mp4";
 
 $runAddTitle ="";
-// ADDING A TITLE
-// if ($title != "") {
-//     $runAddTitle = addTitle($videoPath, $videoResultName, $title);
-// }
-// else {
-//     shell_exec("cp ".$videoPath." model/outputs/".$videoResultName);
-// }
+ADDING A TITLE
+if ($title != "") {
+    $runAddTitle = addTitle($videoPath, $videoResultName, $title);
+}
+else {
+    shell_exec("cp ".$videoPath." model/outputs/".$videoResultName);
+}
 
 
 // ADDING THE INTRO
@@ -102,7 +102,7 @@ $runAddTitle ="";
 // ADDING ZOOM (NOT YET)
 
 // depending on the process :
-$finalVideoName = "generated_video_final.mp4";
+$finalVideoName = $videoResultName;
 
 session_start();
 
