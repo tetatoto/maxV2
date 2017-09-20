@@ -11,7 +11,7 @@ gender='woman'
 # knowing the argument fot the template : wowan or man (the default answer is female)
 if [ $1 = "female" ]
 then
-	gender='woman';
+	gender='woman02';
 elif [ $1 = "male" ]
 then
 	gender='man';
