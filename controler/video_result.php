@@ -81,7 +81,7 @@ $videoPath = "model/outputs/generated_video_final.mp4";
 $videoResultName= "final_with_title.mp4";
 
 $runAddTitle ="";
-ADDING A TITLE
+// ADDING A TITLE
 if ($title != "") {
     $runAddTitle = addTitle($videoPath, $videoResultName, $title);
 }
