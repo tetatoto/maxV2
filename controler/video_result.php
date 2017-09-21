@@ -92,7 +92,7 @@ else {
 
 // ADDING THE INTRO
 $videosToConcatenate = array();
-array_push($videosToConcatenate, "file 'templates/intro2.mp4'");
+array_push($videosToConcatenate, "file 'templates/intro3.mp4'");
 array_push($videosToConcatenate, "file 'outputs/".$videoResultName."'");
 
 $videoResultName2 = "final_with_intro.mp4";
