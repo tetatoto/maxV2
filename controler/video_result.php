@@ -102,11 +102,11 @@ $concatenateLogs = concatenateVideos($videosToConcatenate, $videoResultName2);
 // ADDING ZOOM (NOT YET)
 
 // depending on the process :
-$finalVideoName = $videoResultName;
+$finalVideoName = $videoResultName2;
 
 session_start();
 
-$_SESSION['videoNameToUpload'] = $finalVideoName2;
+$_SESSION['videoNameToUpload'] = $finalVideoName;
 
 
 // Displaying the view :
