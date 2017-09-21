@@ -92,20 +92,20 @@ else {
 
 
 // ADDING THE INTRO
-$videosToConcatenate = array();
-// array_push($videosToConcatenate, "file 'templates/intro3.mp4'");
-// array_push($videosToConcatenate, "file 'outputs/".$videoResultName."'");
-array_push($videosToConcatenate, "model/templates/intro3.mp4");
-array_push($videosToConcatenate, "model/outputs/".$videoResultName);
+// $videosToConcatenate = array();
+// // array_push($videosToConcatenate, "file 'templates/intro3.mp4'");
+// // array_push($videosToConcatenate, "file 'outputs/".$videoResultName."'");
+// array_push($videosToConcatenate, "model/templates/intro3.mp4");
+// array_push($videosToConcatenate, "model/outputs/".$videoResultName);
 
-$videoResultName2 = "final_with_intro.mp4";
+// $videoResultName2 = "final_with_intro.mp4";
 
-$concatenateLogs = concatenateVideosHardWay($videosToConcatenate, $videoResultName2);
+// $concatenateLogs = concatenateVideosHardWay($videosToConcatenate, $videoResultName2);
 
 // ADDING ZOOM (NOT YET)
 
 // depending on the process :
-$finalVideoName = $videoResultName2;
+$finalVideoName = $videoResultName;
 
 session_start();
 
