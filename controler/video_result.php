@@ -105,7 +105,7 @@ else {
 // ADDING ZOOM (NOT YET)
 
 // depending on the process :
-$finalVideoName = $videoResultName1;
+$finalVideoName = $videoResultName;
 
 session_start();
 
