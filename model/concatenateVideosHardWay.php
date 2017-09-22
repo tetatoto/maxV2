@@ -6,7 +6,7 @@ function concatenateVideosHardWay($videos, $videoResultName) {
     // $videos is an array containing the path of the videos to concatenate
     // $videoResultName is a String containing the name of the resulting video
     
-    if ($videos.length == 2) {
+    if (count($videos) != 2) {
         return "error : wrong inputs, only two videos are possible for this method";
     }
     else {
