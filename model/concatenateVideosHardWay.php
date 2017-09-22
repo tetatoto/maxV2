@@ -11,8 +11,8 @@ function concatenateVideosHardWay($videos, $videoResultName) {
     }
     else {
 
-        $input1 = $video[0];
-        $input2 = $video[1];
+        $input1 = $videos[0];
+        $input2 = $videos[1];
 
         // We run FFMPEG to concatenate the videos listed in the file
         // $concatenateLogs = shell_exec("ffmpeg -auto_convert 1 -f concat -i model/videosToConcatenate.txt -c copy model/outputs/".$videoResultName);
